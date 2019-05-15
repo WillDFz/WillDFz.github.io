@@ -3,94 +3,97 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
  */
- body,
- html {
-	 height: 100%;
-	 overflow-x: hidden
- }
- 
- body {
-	 background-color: #000;
-	 background-repeat: no-repeat;
-	 background-attachment: fixed;
-	 background-size: cover;
-	 background-position: center center;
-	 background-position: fixed;
-	 background-size: cover;
-	 background-color: #0072ce;
-	 padding-top: 56px;
- }
+body,
+html {
+	height: 100%;
+	overflow-x: hidden
+}
 
-th{
+body {
+	background-image: url(../../../media/3.png);
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+	background-position: fixed;
+	background-size: cover;
+	background-color: #0072ce;
+	padding-top: 56px;
+}
+
+th {
 	width: 16.66px !important;
 }
-a{
+
+a {
 	text-decoration: none !important;
 }
 
-.nav-link{
+.nav-link {
 	color: #34495E;
 }
 
 
 
-.navbarColor{
-	background-image: linear-gradient(to right, rgb(0, 35, 111) , rgb(54, 104, 221));
+.navbarColor {
+	background-image: linear-gradient(to right, rgb(0, 35, 111), rgb(54, 104, 221));
 	border-bottom: 1px solid black;
 }
 
-.footerColor{
-	background-image: linear-gradient(to right, rgb(0, 35, 111) , rgb(54, 104, 221));
-	
-	padding-bottom: 1rem!important ;
-	padding-top: 1rem !important ;
+.footerColor {
+	background-image: linear-gradient(to right, rgb(0, 35, 111), rgb(54, 104, 221));
+
+	padding-bottom: 1rem !important;
+	padding-top: 1rem !important;
 	border-top: 1px solid black;
 }
 
-.logo-nav{
+.logo-nav {
 	width: 15%;
 
 }
-.cadastrarDets{
+
+.cadastrarDets {
 	background-color: #fff;
 }
 
-.logo-card{
+.logo-card {
 	width: 100%;
 	padding-top: 15%;
-	
+
 }
 
-.logo{
+.logo {
 	height: fit-content;
 	width: 70%;
 	position: relative;
 	margin: 0 auto;
 	text-align: center;
-	
+
 	border-radius: 45px;
 	box-shadow: 0 0 50px -5px rgb(9, 25, 255);
-   
+
 
 }
 
-.logo img{
+.logo img {
 	width: 90%;
 	padding-top: 10px;
 
 }
 
-.nav-nome{
+.nav-nome {
 	width: 50%;
 }
 
 
 
-.inner-text{
+.inner-text {
 	color: red;
 }
 
-.botoes-grupo-label{
+.botoes-grupo-label {
 	color: #fff;
 	padding: 5px;
 	margin: auto;
@@ -102,7 +105,7 @@ a{
 }
 
 
-.botoes-grupo{
+.botoes-grupo {
 	padding: 10px;
 	text-align: center;
 	background-color: rgb(0, 35, 111);
@@ -111,7 +114,7 @@ a{
 	border-radius: 5px;
 }
 
-.figuras{
+.figuras {
 	padding: 3px;
 	margin: auto;
 	width: 40%;
@@ -119,21 +122,23 @@ a{
 
 
 }
-.formulario{
+
+.formulario {
 	margin: auto;
 	width: 90%;
 }
 
-.box-w{
+.box-w {
 	background-color: #fff;
 	width: 80%;
 	margin: 5px;
 }
-.entrada{
+
+.entrada {
 	padding: 5px;
 }
 
-.quadroDados{
+.quadroDados {
 	position: relative;
 	width: 10%;
 	background-color: #fff;
@@ -141,7 +146,7 @@ a{
 }
 
 
-.tabela-principal{
+.tabela-principal {
 	width: 95%;
 
 	margin-right: auto;
@@ -150,153 +155,166 @@ a{
 
 }
 
-.tabela1{
+.tabela1 {
 	text-align: center;
 
 }
 
 
-.push{
+.push {
 	margin-bottom: 50px;
 }
-.quadroProbUniforme{
+
+.quadroProbUniforme {
 	position: relative;
 	background-color: #fff;
 	width: 75%;
 	margin: 0 auto;
-	padding-bottom: 15%;	
+	padding-bottom: 15%;
 
 }
 
-#nome{
+#nome {
 	color: #fff;
 	font-size: 200%;
 	text-shadow: 0 0 3px #48a0dc;
 }
-#rowProb{
-	
-}
-#rowDados{
+
+#rowProb {}
+
+#rowDados {
 	padding-bottom: 15%;
 }
-#rowDadosProbabilidade{
+
+#rowDadosProbabilidade {
 	text-align: center;
-	
+
 }
 
-#separatrizNumberInput{
+#separatrizNumberInput {
 	width: 30%;
 	display: inline-block;
 }
 
-#condicoes{
+#condicoes {
 	width: 45%;
-	
+
 }
 
-#condicoesBinomial{
+#condicoesBinomial {
 	width: 45%;
 	display: none;
 }
-#condicoesNormal{
+
+#condicoesNormal {
 	display: none;
 }
-#quantidade{
+
+#quantidade {
 	width: 45%;
-    margin: 0;
+	margin: 0;
 	display: inline-block;
 	float: right;
 }
 
-#tamanhoN{
+#tamanhoN {
 	width: 45%;
-    margin: 0;
+	margin: 0;
 	float: right;
 	display: none;
 }
-#binomialForm1{
+
+#binomialForm1 {
 	display: none;
 }
-#binomialForm2{
-	display: none;	
-}
-#normalForm{
+
+#binomialForm2 {
 	display: none;
 }
-#media{
+
+#normalForm {
+	display: none;
+}
+
+#media {
 	width: 45%;
 	display: inline-block;
 }
-#desvioPadrao{
+
+#desvioPadrao {
 	width: 45%;
 	display: inline-block;
 	float: right;
 }
-#sucesso{
+
+#sucesso {
 	width: 45%;
 	display: inline-block;
 }
-#fracasso{
+
+#fracasso {
 	width: 45%;
-  	display: inline-block;
+	display: inline-block;
 	float: right;
 
 }
 
-#variavel{
+#variavel {
 	width: 45%;
 	display: inline-block;
 
 }
-#ateMax{
+
+#ateMax {
 	width: 45%;
-  	display: inline-block;
+	display: inline-block;
 	float: right;
 
 }
 
-#pontoMinimo{
+#pontoMinimo {
 	width: 45%;
 	display: inline-block;
-	
+
 }
-#minMaxForm{
+
+#minMaxForm {
 	display: block;
 }
 
-#entreForm{
+#entreForm {
 	display: none;
 }
 
-#pontoMaximo{
-	width: 45%;
-  	display: inline-block;
-	float: right;
-
-}
-#x{
-	
+#pontoMaximo {
 	width: 45%;
 	display: inline-block;
-	
-}
-
-#y{
-	
-	width: 45%;
-  	display: inline-block;
 	float: right;
 
 }
 
-#calcularUniforme{
-	
+#x {
+
+	width: 45%;
+	display: inline-block;
+
 }
 
-#calcularBinomial{
+#y {
+
+	width: 45%;
+	display: inline-block;
+	float: right;
+
+}
+
+#calcularUniforme {}
+
+#calcularBinomial {
 	display: none;
 }
-#calcularNormal{
+
+#calcularNormal {
 	display: none;
 }
 
@@ -313,43 +331,45 @@ a{
 
 
 @media(min-width:550px) {
-    .logo{
-    	width: 450px;
-    	height: 160px;
-    }
-	.formulario{
+	.logo {
+		width: 450px;
+		height: 160px;
+	}
+
+	.formulario {
 		margin: auto;
 		width: 75%;
 	}
 }
 
-@media(min-width: 768px){
-	.formulario{
+@media(min-width: 768px) {
+	.formulario {
 		margin: auto;
 		width: 450px;
 	}
-	.quadroProbUniforme{
+
+	.quadroProbUniforme {
 		width: 450px;
 	}
 }
 
-@media(min-width: 992px){
+@media(min-width: 992px) {
 	.logo-nav {
-    	width: 15%;
-    	padding-right: 10px;
+		width: 15%;
+		padding-right: 10px;
 	}
 }
 
-@media(max-width: 550px){
+@media(max-width: 550px) {
 
-	.logo{
+	.logo {
 		width: 95%;
 	}
 }
 
 
-@media(max-width: 992px){
+@media(max-width: 992px) {
 	.logo-nav {
-    	margin-right: 10px;
+		margin-right: 10px;
 	}
 }
