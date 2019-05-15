@@ -4,10 +4,13 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
  */
 body {
-	background-position: fixed ;
 	background-size: cover;
 	background-color: #0072ce;
-  	padding-top: 56px;
+	padding-top: 56px;
+	background-color: #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center
 }
 
 th{
