@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Probabilidade</title>
+  <link rel="icon" href="media/icon.png" type="image/gif" sizes="16x16">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <link href="css/styleS.css" rel="stylesheet">
+
+  <!-- Muda arquivo js usado 
+  <script type="text/javascript">
+    function getTipo(tipo) {
+      let s = document.getElementById("modulo");
+      switch (tipo) {
+        case "Uniforme":
+          console.log("1");
+
+          s.type = "text/javascript";
+          s.src = "scripts/uniforme.js";
+          s.innerHTML = null;
+
+          break;
+        case "Binomial":
+          console.log("2");
+          
+          s.type = "text/javascript";
+          s.src = "scripts/binomial.js";
+          s.innerHTML = null;
+
+          break;
+        case "Normal":
+          console.log("3");
+         
+          s.type = "text/javascript";
+          s.src = "scripts/normal.js";
+          s.innerHTML = null;
+          
+
+          break;
+        default:
+          s.type = "text/javascript";
+          s.src = "scripts/uniforme.js";
+          s.innerHTML = null;
+
+          break;
+      }
+    }
+  </script>-->
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
+    <div class="container">
+      <a class="navbar-brand nav-nome" href="index.html"><img class="logo-nav" src="media/icon.png"
+          alt="Logo Blue Statistics">Blue Statistics</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cadastre_se.html">Cadastre-se</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="row" id="rowProb">
+    <div class="formulario">
+      <div class="card my-5">
+        <div class="card-header" style="text-align: center;">
+          <button id="uniformeBtn" value="Uniforme" type="button" class="btn btn-dark">Uniforme</Button>
+          <button id="binomialBtn" value="Binomial" type="button" class="btn btn-dark">Binomial</Button>
+          <button id="normalBtn" value="Normal" type="button" class="btn btn-dark">Normal</Button>
+        </div>
+
+
+
+
+        <div class=" card-body">
+          <div class="text-center">
+            <img src="media/lapis.png" alt="Lapis">
+          </div>
+          <h5 class="card-title text-center">Probabilidade</h5>
+          <form id="probForm" name="probabilidade">
+            <div class="form-group">
+              <!-- Uniforme -->
+              <select id="condicoes" class="form-group">
+                <option value="maiorQue">Maior que</option>
+                <option value="entre">Entre</option>
+                <option value="menorQue">Menor que</option>
+                <option value="varianciaDesvio">Variancia e Desvio Padrao</option>
+                <option value="medio">Valor medio (media)</option>
+              </select>
+              <input id="quantidade" type="text" name="quantidade" class="form-control my-input"
+                placeholder="Quantidade">
+            </div>
+            <div id="minMaxForm" class="form-group">
+              <input id="pontoMinimo" type="text" name="pontoMinimo" class="form-control my-input"
+                placeholder="Ponto minimo">
+              <input id="pontoMaximo" type="text" name="pontoMaximo" class="form-control my-input"
+                placeholder="Ponto maximo">
+            </div>
+
+            <!-- Fim Uniforme -->
+            <!-- Binomial -->
+            <div class="form-group">
+              <select id="condicoesBinomial" class="form-group">
+                <option value="probab">Probabilidade</option>
+                <option value="media">Media</option>
+                <option value="desvioPadrao">Desvio Padrao</option>
+              </select>
+              <input id="tamanhoN" type="text" name="tamanhoN" class="form-control my-input" placeholder="Amostra(N)">
+            </div>
+            <div id="binomialForm1" class="form-group">
+              <input id="sucesso" type="text" name="sucesso" class="form-control my-input" placeholder="Sucesso(P)">
+              <input id="fracasso" type="text" name="fracasso" class="form-control my-input" placeholder="Fracasso(Q)">
+            </div>
+            <!-- Select do Normal -->
+            <select id="condicoesNormal" class="form-group">
+              <option value="maiorQue">Maior que</option>
+              <option value="entre">Entre</option>
+              <option value="menorQue">Menor que</option>
+            </select>
+            <!-- Fim Select do Normal -->
+            <div id="binomialForm2" class="form-group">
+              <input id="variavel" type="text" name="variavel" class="form-control my-input"
+                placeholder="Evento(K) | Digite os dados separados por ;">
+              <input id="ateMax" type="text" name="ateMax" class="form-control my-input" placeholder="Ate(Max)">
+            </div>
+            <!-- Fim Binomial -->
+            <!-- Normal -->
+
+            <div id="normalForm" class="form-group">
+              <input id="media" type="text" name="media" class="form-control my-input" placeholder="Média">
+              <input id="desvioPadrao" type="text" name="desvioPadrao" class="form-control my-input"
+                placeholder="Desvio Padrão">
+            </div>
+            <div id="entreForm" class="form-group">
+              <input id="x" type="text" name="x" class="form-control my-input" placeholder="de (X)">
+              <input id="y" type="text" name="y" class="form-control my-input" placeholder="ate (Y)">
+            </div>
+            <!-- Fim Normal -->
+
+            <div class="text-center ">
+              <button id="calcularUniforme" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular
+                Uniforme</button>
+              <button id="calcularBinomial" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular
+                Binomal</button>
+              <button id="calcularNormal" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular Normal</button>
+            </div>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="row" id="rowDadosProbabilidade">
+
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="py-5 footerColor">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Blue Statistics 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <script id="modulo"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--  -->
+
+
+  <script src="scripts/probStyle.js"></script>
+  <script src="scripts/uniforme.js"></script>
+  <script src="scripts/binomial.js"></script>
+  <script src="scripts/normal.js"></script>
+
+</body>
+
+</html>

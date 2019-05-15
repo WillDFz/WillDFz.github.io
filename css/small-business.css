@@ -1,0 +1,155 @@
+/*!
+ * Start Bootstrap - Small Business (https://startbootstrap.com/template-overviews/small-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
+ */
+body {
+	background-position: fixed ;
+	background-size: cover;
+	background-color: #487bdc;
+  	padding-top: 56px;
+}
+
+.navbarColor{
+	background-color: #34495E;
+}
+
+.footerColor{
+	background-color: #34495E;
+	padding-bottom: 1rem!important ;
+	padding-top: 1rem !important ;
+}
+
+.logo-nav{
+	width: 15%;
+
+}
+.cadastrarDets{
+	background-color: #fff;
+}
+
+.logo-card{
+	width: 100%;
+	padding-top: 15%;
+}
+
+.logo{
+	height: fit-content;
+	width: 70%;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border: 3px solid #218;
+	border-radius: 15px;
+	background-color: #fff;
+
+}
+
+.logo img{
+	width: 90%;
+	padding-top: 10px;
+
+}
+
+.nav-nome{
+	width: 50%;
+}
+
+
+
+.inner-text{
+	color: red;
+}
+
+.botoes-grupo-label{
+	color: #fff;
+	padding: 5px;
+	margin: auto;
+	background-color: #34495E;
+	opacity: 0.9;
+	width: fit-content;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+
+.botoes-grupo{
+	padding: 10px;
+	text-align: center;
+	background-color: #34495E  ;
+	opacity: 0.9;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.figuras{
+	padding: 3px;
+	margin: auto;
+	width: 40%;
+	display: block;
+
+
+}
+
+
+.box-w{
+	background-color: #fff;
+	width: 80%;
+	margin: 5px;
+}
+.entrada{
+	padding: 5px;
+}
+
+
+.tabela-principal{
+	width: 70%;
+	margin-top: 5%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 15%;
+
+
+}
+
+.push{
+	margin-bottom: 50px;
+}
+
+
+#nome{
+	color: #fff;
+	font-size: 200%;
+	text-shadow: 0 0 3px #48a0dc;
+}
+
+
+
+
+@media(min-width:550px) {
+    .logo{
+    	width: 450px;
+    	height: 160px;
+    }
+}
+
+@media(min-width: 992px){
+	.logo-nav {
+    	width: 15%;
+    	padding-right: 10px;
+	}
+}
+
+@media(max-width: 550px){
+
+	.logo{
+		width: 95%;
+	}
+}
+
+
+@media(max-width: 992px){
+	.logo-nav {
+    	margin-right: 10px;
+	}
+}
