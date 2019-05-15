@@ -3,15 +3,23 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
  */
-body {
-	background-size: cover;
-	background-color: #0072ce;
-	padding-top: 56px;
-	background-color: #000;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center
-}
+ body,
+ html {
+	 height: 100%;
+	 overflow-x: hidden
+ }
+ 
+ body {
+	 background-color: #000;
+	 background-repeat: no-repeat;
+	 background-attachment: fixed;
+	 background-size: cover;
+	 background-position: center center;
+	 background-position: fixed;
+	 background-size: cover;
+	 background-color: #0072ce;
+	 padding-top: 56px;
+ }
 
 th{
 	width: 16.66px !important;
