@@ -54,14 +54,17 @@ let calcularNormal = document.getElementById("calcularNormal");
 
 function selecaoUniforme() {
     selecionaCondicao();
+    document.querySelector('.table').remove();
 }
 
 function selecaoBinomial() {
     selecionaCondicaoBinomial();
+    document.querySelector('.table').remove();
 }
 
 function selecaoNormal() {
     selecionaCondicaoNormal();
+    document.querySelector('.table').remove();
 
 }
 //////////////////////////////////////////////////////////// Uniforme//////////////////////////////

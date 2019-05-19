@@ -141,66 +141,74 @@ function mediaDistUniforme() {
 
 // Define a operacao e retorna resultado
 function operacao() {
-    let resultado;
+    if (flagElemento == false) {
+        flagElemento = true;
+        let resultado;
 
-    // Index Droplist de condicoes Uniforme
-    let indexUniformeList = document.getElementById('condicoes').selectedIndex;
+        // Index Droplist de condicoes Uniforme
+        let indexUniformeList = document.getElementById('condicoes').selectedIndex;
 
-    let campo = document.getElementById('rowDadosProbabilidade');
-    let quadro = document.createElement('table');
-    quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbUniforme");
+        let campo = document.getElementById('rowDadosProbabilidade');
+        let quadro = document.createElement('table');
+        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbUniforme");
 
-    campo.appendChild(quadro);
+        campo.appendChild(quadro);
 
-    // Criando a linha de cabeçalho da tabela
-    let cabecalho = document.createElement('thead');
-    cabecalho.classList.add('thead-light');
-    // Posicionando a linha do cabeçalho
-    quadro.appendChild(cabecalho);
-    // Criando as células do cabeçalho'
-    let cabec = document.createElement('th');
-    cabecalho.appendChild(cabec);
-    cabec.innerText = "Resultado";
-    // Criando cedula da tabela
-    let celula = document.createElement('td');
-    quadro.appendChild(celula);
+        // Criando a linha de cabeçalho da tabela
+        let cabecalho = document.createElement('thead');
+        cabecalho.classList.add('thead-light');
+        // Posicionando a linha do cabeçalho
+        quadro.appendChild(cabecalho);
+        // Criando as células do cabeçalho'
+        let cabec = document.createElement('th');
+        cabecalho.appendChild(cabec);
+        cabec.innerText = "Resultado";
+        // Criando cedula da tabela
+        let celula = document.createElement('td');
+        quadro.appendChild(celula);
 
 
-    switch (indexUniformeList) {
-        case 0:
-            // Maior que
-            console.log("entrou");
-            resultado = maiorQueDistUniforme();
+        switch (indexUniformeList) {
+            case 0:
+                // Maior que
+                console.log("entrou");
+                resultado = maiorQueDistUniforme();
 
-            celula.innerText = resultado;
-            break;
-        case 1:
-            // Entre
-            console.log("entrou");
+                celula.innerText = resultado;
+                break;
+            case 1:
+                // Entre
+                console.log("entrou");
 
-            resultado = entreDistUniforme();
-            celula.innerText = resultado;
-            break;
-        case 2:
-            //Menor que
-            console.log("entrou");
-            resultado = menorQueDistUniforme();
-            celula.innerText = resultado;
-            break;
-        case 3:
-            //Desvio e Variacao
-            console.log("entrou");
-            resultado = desvioPadraoDistUniforme();
-            celula.innerText = resultado;
-            break;
-        case 4:
-            // Valor Medio
-            console.log("entrou");
-            resultado = mediaDistUniforme();
-            celula.innerText = resultado;
-            break;
-        default:
-            break;
+                resultado = entreDistUniforme();
+                celula.innerText = resultado;
+                break;
+            case 2:
+                //Menor que
+                console.log("entrou");
+                resultado = menorQueDistUniforme();
+                celula.innerText = resultado;
+                break;
+            case 3:
+                //Desvio e Variacao
+                console.log("entrou");
+                resultado = desvioPadraoDistUniforme();
+                celula.innerText = resultado;
+                break;
+            case 4:
+                // Valor Medio
+                console.log("entrou");
+                resultado = mediaDistUniforme();
+                celula.innerText = resultado;
+                break;
+            default:
+                break;
+        }
+    } else {
+        // Remove tabela existente
+        document.querySelector('.table').remove();
+        flagElemento = false;
+        operacao();
     }
 }
 ////////////////////////////////////////////////////

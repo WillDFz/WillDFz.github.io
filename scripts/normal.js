@@ -3,9 +3,8 @@
 let formN = document.getElementById("probForm");
 // Botao Calcular
 let botaoCalcularN = document.getElementById("calcularNormal");
-
-
-
+// Flag pra deletar elemento
+var flagElementoN = false;
 ////////////////// GETS ////////////////////////////
 
 // Pega Quantidade
@@ -513,55 +512,63 @@ function entreDistNormal() {
 
 // Define a operacao e retorna resultado
 function operacaoNormal() {
-    
-    let resultado;
+    if (flagElementoN == false) {
+        flagElementoN = true;
 
-    // Index Droplist de condicoes Normal
-    let indexNormalList = document.getElementById('condicoesNormal').selectedIndex;
+        let resultado;
 
-    let campo = document.getElementById('rowDadosProbabilidade');
-    let quadro = document.createElement('table');
-    quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbNormal");
+        // Index Droplist de condicoes Normal
+        let indexNormalList = document.getElementById('condicoesNormal').selectedIndex;
 
-    campo.appendChild(quadro);
+        let campo = document.getElementById('rowDadosProbabilidade');
+        let quadro = document.createElement('table');
+        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbNormal");
 
-    // Criando a linha de cabeçalho da tabela
-    let cabecalho = document.createElement('thead');
-    cabecalho.classList.add('thead-light');
-    // Posicionando a linha do cabeçalho
-    quadro.appendChild(cabecalho);
-    // Criando as células do cabeçalho'
-    let cabec = document.createElement('th');
-    cabecalho.appendChild(cabec);
-    cabec.innerText = "Resultado";
-    // Criando cedula da tabela
-    let celula = document.createElement('td');
-    quadro.appendChild(celula);
+        campo.appendChild(quadro);
+
+        // Criando a linha de cabeçalho da tabela
+        let cabecalho = document.createElement('thead');
+        cabecalho.classList.add('thead-light');
+        // Posicionando a linha do cabeçalho
+        quadro.appendChild(cabecalho);
+        // Criando as células do cabeçalho'
+        let cabec = document.createElement('th');
+        cabecalho.appendChild(cabec);
+        cabec.innerText = "Resultado";
+        // Criando cedula da tabela
+        let celula = document.createElement('td');
+        quadro.appendChild(celula);
 
 
-    switch (indexNormalList) {
-        case 0:
-            // Maior que
-            
-            resultado = maiorQueDistNormal();
-            
-            celula.innerText = resultado;
-            break;
-        case 1:
-            // Entre
-            
-            resultado = entreDistNormal();
-            celula.innerText = resultado;
-            break;
-        case 2:
-            // Menor que
-            
-            resultado = menorQueDistNormal();
-            celula.innerText = resultado;
-            break;
+        switch (indexNormalList) {
+            case 0:
+                // Maior que
 
-        default:
-            break;
+                resultado = maiorQueDistNormal();
+
+                celula.innerText = resultado;
+                break;
+            case 1:
+                // Entre
+
+                resultado = entreDistNormal();
+                celula.innerText = resultado;
+                break;
+            case 2:
+                // Menor que
+
+                resultado = menorQueDistNormal();
+                celula.innerText = resultado;
+                break;
+
+            default:
+                break;
+        }
+    } else {
+        // Remove tabela existente
+        document.querySelector('.table').remove();
+        flagElementoN = false;
+        operacaoNormal();
     }
 }
 

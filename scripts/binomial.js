@@ -4,8 +4,8 @@
 let formB = document.getElementById("probForm");
 // Botao Calcular
 let botaoCalcularB = document.getElementById("calcularBinomial");
-
-
+// Flag pra deletar elemento
+let flagElementoB = false;
 ///////////////////////////////////////// GETS ////////////////////////////
 // Pega Amostra (N)
 function getAmostra() {
@@ -28,10 +28,10 @@ function getEvento() {
 
     let eventoSplit = evento.split(";");
     let eventoVetorInt = [];
-    for(let i = 0; i < eventoSplit.length; i++){
-       eventoVetorInt[i] = parseInt(eventoSplit[i]);
+    for (let i = 0; i < eventoSplit.length; i++) {
+        eventoVetorInt[i] = parseInt(eventoSplit[i]);
     }
-    
+
     console.log(eventoVetorInt);
 
     return eventoVetorInt;
@@ -104,56 +104,63 @@ function desvioPadraoDistBinomial() {
 ////////////////////////////////////////////////////////////////
 // Define a operacao e retorna resultado
 function operacaoBinomial() {
-    console.log("op");
-    let resultado;
+    if (flagElementoB == false) {
+        flagElementoB = true;
+        let resultado;
 
 
-    // Index Droplist de condicoes Binomial
-    let indexBinomialList = document.getElementById('condicoesBinomial').selectedIndex;
+        // Index Droplist de condicoes Binomial
+        let indexBinomialList = document.getElementById('condicoesBinomial').selectedIndex;
 
-    let campo = document.getElementById('rowDadosProbabilidade');
-    let quadro = document.createElement('table');
-    quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbBinomial");
+        let campo = document.getElementById('rowDadosProbabilidade');
+        let quadro = document.createElement('table');
+        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbBinomial");
 
-    campo.appendChild(quadro);
+        campo.appendChild(quadro);
 
-    // Criando a linha de cabeçalho da tabela
-    let cabecalho = document.createElement('thead');
-    cabecalho.classList.add('thead-light');
-    // Posicionando a linha do cabeçalho
-    quadro.appendChild(cabecalho);
-    // Criando as células do cabeçalho'
-    let cabec = document.createElement('th');
-    cabecalho.appendChild(cabec);
-    cabec.innerText = "Resultado";
-    // Criando cedula da tabela
-    let celula = document.createElement('td');
-    quadro.appendChild(celula);
+        // Criando a linha de cabeçalho da tabela
+        let cabecalho = document.createElement('thead');
+        cabecalho.classList.add('thead-light');
+        // Posicionando a linha do cabeçalho
+        quadro.appendChild(cabecalho);
+        // Criando as células do cabeçalho'
+        let cabec = document.createElement('th');
+        cabecalho.appendChild(cabec);
+        cabec.innerText = "Resultado";
+        // Criando cedula da tabela
+        let celula = document.createElement('td');
+        quadro.appendChild(celula);
 
 
-    switch (indexBinomialList) {
-        case 0:
-            // Probabilidade
-            console.log("P");
-            resultado = probabilidadeBinomial();
-            console.log(resultado);
-            celula.innerText = resultado;
-            break;
-        case 1:
-            // Media
-            console.log("M");
-            resultado = mediaDistBinomial();
-            celula.innerText = resultado;
-            break;
-        case 2:
-            // Desvio Padrao
-            console.log("D");
-            resultado = desvioPadraoDistBinomial();
-            celula.innerText = resultado;
-            break;
+        switch (indexBinomialList) {
+            case 0:
+                // Probabilidade
+                console.log("P");
+                resultado = probabilidadeBinomial();
+                console.log(resultado);
+                celula.innerText = resultado;
+                break;
+            case 1:
+                // Media
+                console.log("M");
+                resultado = mediaDistBinomial();
+                celula.innerText = resultado;
+                break;
+            case 2:
+                // Desvio Padrao
+                console.log("D");
+                resultado = desvioPadraoDistBinomial();
+                celula.innerText = resultado;
+                break;
 
-        default:
-            break;
+            default:
+                break;
+        }
+    } else {
+        // Remove tabela existente
+        document.querySelector('.table').remove();
+        flagElementoB = false;
+        operacaoBinomial();
     }
 }
 ////////////////////////////////////////////////////
