@@ -135,22 +135,56 @@ function operacaoBinomial() {
         switch (indexBinomialList) {
             case 0:
                 // Probabilidade
-                console.log("P");
-                resultado = probabilidadeBinomial();
-                console.log(resultado);
-                celula.innerText = resultado;
+
+                let tamanhoN = document.getElementById("tamanhoN").value;
+                let sucesso = document.getElementById("sucesso").value;
+                let fracasso = document.getElementById("fracasso").value;
+                let variavel = document.getElementById("variavel").value;
+                if (tamanhoN == "" || sucesso == "" || fracasso == "" || variavel == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = probabilidadeBinomial();
+
+                    celula.innerText = resultado;
+
+                }
+
+
                 break;
             case 1:
                 // Media
-                console.log("M");
-                resultado = mediaDistBinomial();
-                celula.innerText = resultado;
+                let tamanhoN_ = document.getElementById("tamanhoN").value;
+                let sucesso_ = document.getElementById("sucesso").value;
+                if (tamanhoN_ == "" || sucesso_ == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = mediaDistBinomial();
+                    celula.innerText = resultado;
+
+                }
+
+
                 break;
             case 2:
                 // Desvio Padrao
-                console.log("D");
-                resultado = desvioPadraoDistBinomial();
-                celula.innerText = resultado;
+                let tamanhoN_1 = document.getElementById("tamanhoN").value;
+                let sucesso_1 = document.getElementById("sucesso").value;
+                let fracasso_ = document.getElementById("fracasso").value;
+                if (tamanhoN_1 == "" || sucesso_1 == "" || fracasso_ == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = desvioPadraoDistBinomial();
+                    celula.innerText = resultado;
+
+                }
+
+               
                 break;
 
             default:

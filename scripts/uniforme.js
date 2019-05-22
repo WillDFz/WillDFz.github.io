@@ -8,11 +8,18 @@ let form = document.getElementById("probForm");
 let botaoCalcular = document.getElementById("calcularUniforme");
 // Flag pra deletar elemento
 var flagElemento = false;
+
+/////////////////////////////////////////////
+
+
+
 //////////////////////  GETS ///////////////////////////////////////
 // Pega Quantidade
 function getQuantidade() {
     let quantidade = form.quantidade.value;
+
     return parseFloat(quantidade);
+
 }
 // Pega Ponto Minimo
 function getPontoMinimo() {
@@ -135,6 +142,9 @@ function mediaDistUniforme() {
     return media;
 
 }
+
+
+
 /////////////////////////////////////
 
 
@@ -171,35 +181,88 @@ function operacao() {
         switch (indexUniformeList) {
             case 0:
                 // Maior que
-                console.log("entrou");
-                resultado = maiorQueDistUniforme();
+                let a = document.getElementById("quantidade").value;
+                let b = document.getElementById("pontoMinimo").value;
+                let c = document.getElementById("pontoMaximo").value;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                if (a == "" || b == "" || c == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = maiorQueDistUniforme();
+                    celula.innerText = resultado;
 
-                celula.innerText = resultado;
+                }
+
                 break;
             case 1:
                 // Entre
-                console.log("entrou");
+                let pontoMinimo = document.getElementById("pontoMinimo").value;
+                let pontoMaximo = document.getElementById("pontoMaximo").value;
+                let x = document.getElementById("x");
+                let y = document.getElementById("y");
+                if (x == "" || y == "" || pontoMinimo == "" || pontoMaximo == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = entreDistUniforme();
+                    celula.innerText = resultado;
 
-                resultado = entreDistUniforme();
-                celula.innerText = resultado;
+                }
+
                 break;
             case 2:
                 //Menor que
-                console.log("entrou");
-                resultado = menorQueDistUniforme();
-                celula.innerText = resultado;
+                let quantidade = document.getElementById("quantidade").value;
+                let pontoMinimo_ = document.getElementById("pontoMinimo").value;
+                let pontoMaximo_ = document.getElementById("pontoMaximo").value;
+
+                if (quantidade == "" || pontoMinimo_ == "" || pontoMaximo_ == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = menorQueDistUniforme();
+                    celula.innerText = resultado;
+
+                }
+
                 break;
             case 3:
                 //Desvio e Variacao
-                console.log("entrou");
-                resultado = desvioPadraoDistUniforme();
-                celula.innerText = resultado;
+                let pontoMinimo_1 = document.getElementById("pontoMinimo").value;
+                let pontoMaximo_1 = document.getElementById("pontoMaximo").value;
+
+                if (pontoMinimo_1 == "" || pontoMaximo_1 == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = desvioPadraoDistUniforme();
+                    celula.innerText = resultado;
+
+                }
+
                 break;
             case 4:
                 // Valor Medio
-                console.log("entrou");
-                resultado = mediaDistUniforme();
-                celula.innerText = resultado;
+                let pontoMinimo_2 = document.getElementById("pontoMinimo").value;
+                let pontoMaximo_2 = document.getElementById("pontoMaximo").value;
+
+                if (pontoMinimo_2 == "" || pontoMaximo_2 == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = mediaDistUniforme();
+                    celula.innerText = resultado;
+
+                }
+
                 break;
             default:
                 break;

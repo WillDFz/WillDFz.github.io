@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Estatistica Descritiva</title>
+    <link rel="icon" href="media/icon.png" type="image/gif" sizes="16x16">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/styleS.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
+        <div class="container">
+            <a class="navbar-brand nav-nome" href="index.html"><img class="logo-nav" src="media/icon.png">Blue
+                Statistics</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastre_se.html">Cadastre-se</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+
+
+        <div class="row" id="rowDescritiva">
+            <div class="formulario">
+                <div class="card my-5">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img src="media/lapis.png">
+
+                        </div>
+                        <h5 class="card-title text-center">Correlacao</h5>
+                        <form id="correlacaoForm" action="" method="" name="descritiva">
+                            <div class="form-group">
+                                
+                                <input type="text" name="x" class="form-control my-input" id="xCorrelacao"
+                                    placeholder="(X) Digite os dados separados por ';'" required>
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="text" name="y" class="form-control my-input" id="yCorrelacao"
+                                    placeholder="(Y) Digite os dados separados por ';'" required>
+                            </div>
+
+                            <div class="text-center ">
+                                <button id="calcular" type="button"
+                                    class=" btn btn-dark btn-block tx-tfm">Calcular</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Dados Row -->
+        <div class="row" id="rowDados">
+
+
+
+        </div>
+    </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 footerColor">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Blue Statistics 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--  -->
+
+    <script src="scripts/correlacao.js"></script>
+
+
+</body>
+
+</html>

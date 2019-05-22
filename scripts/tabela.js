@@ -177,7 +177,7 @@ function medianaContinua() {
 
 
     retornoMedianaContinua = limiteInf + (((resultado - facmAnterior) / fSimples) * intervalos);
-    return retornoMedianaContinua;
+    return retornoMedianaContinua.toFixed(2);
 
 
 
@@ -1018,7 +1018,6 @@ function quadroDados() {
         celula6.innerText = medidasSeparatrizes();
     } else {
         document.querySelector(".quadroDados").remove();
-        console.log('qui');
         flagQ = false;
         quadroDados();
     }
@@ -1107,6 +1106,3 @@ function quadroDadosContinua() {
 
 
 
-botaoCalcular.addEventListener("click", getFormVariavel);
-botaoCalcular.addEventListener("click", getFormValor);
-botaoCalcular.addEventListener("click", tabelaTipo);

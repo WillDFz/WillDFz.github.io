@@ -15,46 +15,6 @@
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
   <link href="css/styleS.css" rel="stylesheet">
-
-  <!-- Muda arquivo js usado 
-  <script type="text/javascript">
-    function getTipo(tipo) {
-      let s = document.getElementById("modulo");
-      switch (tipo) {
-        case "Uniforme":
-          console.log("1");
-
-          s.type = "text/javascript";
-          s.src = "scripts/uniforme.js";
-          s.innerHTML = null;
-
-          break;
-        case "Binomial":
-          console.log("2");
-          
-          s.type = "text/javascript";
-          s.src = "scripts/binomial.js";
-          s.innerHTML = null;
-
-          break;
-        case "Normal":
-          console.log("3");
-         
-          s.type = "text/javascript";
-          s.src = "scripts/normal.js";
-          s.innerHTML = null;
-          
-
-          break;
-        default:
-          s.type = "text/javascript";
-          s.src = "scripts/uniforme.js";
-          s.innerHTML = null;
-
-          break;
-      }
-    }
-  </script>-->
 </head>
 
 <body>
@@ -106,7 +66,7 @@
             <img src="media/lapis.png" alt="Lapis">
           </div>
           <h5 class="card-title text-center">Probabilidade</h5>
-          <form id="probForm" name="probabilidade">
+          <form id="probForm" action="#" name="probabilidade">
             <div class="form-group">
               <!-- Uniforme -->
               <select id="condicoes" class="form-group">
@@ -116,14 +76,14 @@
                 <option value="varianciaDesvio">Variancia e Desvio Padrao</option>
                 <option value="medio">Valor medio (media)</option>
               </select>
-              <input id="quantidade" type="text" name="quantidade" class="form-control my-input"
-                placeholder="Quantidade">
+              <input id="quantidade" type="number" name="quantidade" class="form-control my-input userInput"
+                placeholder="Quantidade" >
             </div>
             <div id="minMaxForm" class="form-group">
-              <input id="pontoMinimo" type="text" name="pontoMinimo" class="form-control my-input"
-                placeholder="Ponto minimo">
-              <input id="pontoMaximo" type="text" name="pontoMaximo" class="form-control my-input"
-                placeholder="Ponto maximo">
+              <input id="pontoMinimo" type="number" name="pontoMinimo" class="form-control my-input userInput"
+                placeholder="Ponto minimo" >
+              <input id="pontoMaximo" type="number" name="pontoMaximo" class="form-control my-input userInput"
+                placeholder="Ponto maximo" >
             </div>
 
             <!-- Fim Uniforme -->
@@ -134,11 +94,14 @@
                 <option value="media">Media</option>
                 <option value="desvioPadrao">Desvio Padrao</option>
               </select>
-              <input id="tamanhoN" type="text" name="tamanhoN" class="form-control my-input" placeholder="Amostra(N)">
+              <input id="tamanhoN" type="number" name="tamanhoN" class="form-control my-input userInput"
+                placeholder="Amostra(N)" >
             </div>
             <div id="binomialForm1" class="form-group">
-              <input id="sucesso" type="text" name="sucesso" class="form-control my-input" placeholder="Sucesso(P)">
-              <input id="fracasso" type="text" name="fracasso" class="form-control my-input" placeholder="Fracasso(Q)">
+              <input id="sucesso" type="number" name="sucesso" class="form-control my-input userInput"
+                placeholder="Sucesso(P)" >
+              <input id="fracasso" type="number" name="fracasso" class="form-control my-input userInput"
+                placeholder="Fracasso(Q)" >
             </div>
             <!-- Select do Normal -->
             <select id="condicoesNormal" class="form-group">
@@ -148,21 +111,25 @@
             </select>
             <!-- Fim Select do Normal -->
             <div id="binomialForm2" class="form-group">
-              <input id="variavel" type="text" name="variavel" class="form-control my-input"
-                placeholder="Evento(K) | Digite os dados separados por ;">
-              <input id="ateMax" type="text" name="ateMax" class="form-control my-input" placeholder="Ate(Max)">
+              <input id="variavel" type="text" name="variavel" class="form-control my-input userInput"
+                placeholder="Evento(K) | Digite os dados separados por ;" >
+              <input id="ateMax" type="number" name="ateMax" class="form-control my-input userInput"
+                placeholder="Ate(Max)" >
             </div>
             <!-- Fim Binomial -->
             <!-- Normal -->
 
             <div id="normalForm" class="form-group">
-              <input id="media" type="text" name="media" class="form-control my-input" placeholder="Média">
-              <input id="desvioPadrao" type="text" name="desvioPadrao" class="form-control my-input"
-                placeholder="Desvio Padrão">
+              <input id="media" type="number" name="media" class="form-control my-input userInput" placeholder="Média"
+                >
+              <input id="desvioPadrao" type="number" name="desvioPadrao" class="form-control my-input userInput"
+                placeholder="Desvio Padrão" >
             </div>
             <div id="entreForm" class="form-group">
-              <input id="x" type="text" name="x" class="form-control my-input" placeholder="de (X)">
-              <input id="y" type="text" name="y" class="form-control my-input" placeholder="ate (Y)">
+              <input id="x" type="number" name="x" class="form-control my-input userInput" placeholder="de (X)"
+                >
+              <input id="y" type="number" name="y" class="form-control my-input userInput" placeholder="ate (Y)"
+                >
             </div>
             <!-- Fim Normal -->
 
@@ -171,7 +138,7 @@
                 Uniforme</button>
               <button id="calcularBinomial" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular
                 Binomal</button>
-              <button id="calcularNormal" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular Normal</button>
+              <button id="calcularNormal" type="button" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
             </div>
           </form>
         </div>

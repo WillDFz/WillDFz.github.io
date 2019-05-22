@@ -41,7 +41,7 @@ function encontraElemento(media, dp, valor) {
 
     let formula = Math.abs((valor - media) / dp); //Fórmula de Z 
     let zDecimal = formula.toFixed(2); //O número deve obrigatoriamente ter 2 casas decimais
-    console.log(typeof (zDecimal));
+    
 
     let z = zDecimal; //Z tá vindo como string
     let quebraString = (z + "").split(""); //quebrando o string Z
@@ -543,6 +543,18 @@ function operacaoNormal() {
         switch (indexNormalList) {
             case 0:
                 // Maior que
+                let quantidade = document.getElementById("quantidade").value;
+                let media = document.getElementById("media").value;
+                let desvioPadrao = document.getElementById("desvioPadrao").value;
+                if (quantidade == "" || media == "" || desvioPadrao == "") {
+                    alert("Preencha todos os campos!");
+                    celula.innerText = "Invalido";
+                    break;
+                } else {
+                    resultado = desvioPadraoDistBinomial();
+                    celula.innerText = resultado;
+
+                }
 
                 resultado = maiorQueDistNormal();
 
