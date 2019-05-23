@@ -10,23 +10,25 @@
  	background-repeat: no-repeat;
  	background-attachment: fixed;
  	background-size: cover;
- 	background-position: center center;
+	 background-position: center center;
+	 
+
+	
+
+
 
  	background-color: #000;
- 	background-repeat: no-repeat;
- 	background-attachment: fixed;
- 	background-size: cover;
- 	background-position: center center;
- 	background-position: fixed;
- 	background-size: cover;
+ 	
+ 
+ 	
  	background-color: #0072ce;
- 	padding-top: 56px;
+ 	padding-top: 50px;
  }
 
  th {
  	width: 16.66px !important;
  }
-
+ 
  a {
  	text-decoration: none !important;
  }

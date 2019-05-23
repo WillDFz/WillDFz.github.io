@@ -160,7 +160,7 @@ function operacao() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table",  "table-bordered", "table-striped","table-dark", "quadroProbUniforme");
+        quadro.classList.add("table",  "table-bordered", "table-dark", "quadroProbUniforme");
 
         campo.appendChild(quadro);
 
@@ -173,9 +173,13 @@ function operacao() {
         let cabec = document.createElement('th');
         cabecalho.appendChild(cabec);
         cabec.innerText = "Resultado";
+        // Cria corpo da tabela
+        let tableBody = document.createElement('tbody');
+        tableBody.classList.add("table-striped");
+        quadro.appendChild(tableBody);
         // Criando cedula da tabela
         let celula = document.createElement('td');
-        quadro.appendChild(celula);
+        tableBody.appendChild(celula);
 
 
         switch (indexUniformeList) {

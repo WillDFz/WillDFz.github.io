@@ -19,8 +19,10 @@ function getFormValor() {
 }
 // Funcao para usar separador e transformar string em array
 function quebraString() {
+    // Retirar espacos
+    let valor = getFormValor().replace(/\s+/g, '');
     // Separa os elementos da String por ; e injeta no vetor
-    let vetorStr = getFormValor().split(";");
+    let vetorStr = valor.split(";");
     // Cria um vetor vazio para ser preenchido com numeros inteiros
     let vetorInt = [];
     for (let i = 0; i < vetorStr.length; i++) {
@@ -434,7 +436,7 @@ function desvioPadraoContinua() {
         quadrado = Math.pow(subtracao, 2);
 
         mult = quadrado * vetorAux[i];
-        console.log(vetorAux[i]);
+       
         somatoria += mult;
 
         primeiro = final;

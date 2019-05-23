@@ -12,30 +12,30 @@ var yLinha;
 //////////////// GETS /////////////////////
 //Pega X (X)
 function getXCorrelacao() {
+     // Pega valor do campo
     let x = formCorrelacao.x.value;
-
-    let xSplit = x.split(";");
+    // Remove espacos
+    let valor = x.replace(/\s+/g, '');
+    // Separa por ; e transforma em vetor
+    let xSplit = valor.split(";");
     let xVetorInt = [];
     for (let i = 0; i < xSplit.length; i++) {
         xVetorInt[i] = parseInt(xSplit[i]);
     }
-
-
-
     return xVetorInt;
 }
 //Pega Y (Y)
 function getYCorrelacao() {
+    // Pega valor do campo
     let y = formCorrelacao.y.value;
-
-    let ySplit = y.split(";");
+    // Remove espacos
+    let valor = y.replace(/\s+/g, '');
+    // Separa por ; e transforma em vetor
+    let ySplit = valor.split(";");
     let yVetorInt = [];
     for (let i = 0; i < ySplit.length; i++) {
         yVetorInt[i] = parseInt(ySplit[i]);
     }
-
-
-
     return yVetorInt;
 }
 
@@ -216,7 +216,7 @@ function gerarGraficoCorrelacao() {
     console.log(yGrafico);
 
     regressao();
-
+    // Tema do grafico
     Highcharts.theme = {
         colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
             '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
@@ -421,10 +421,10 @@ function gerarGraficoCorrelacao() {
         contrastTextColor: '#F0F0F3',
         maskColor: 'rgba(255,255,255,0.3)'
     };
+    /// Aplica tema
     Highcharts.setOptions(Highcharts.theme);
+    // Criando grafico
     Highcharts.chart('containerGrafico', {
-
-
         xAxis: {
             title: 'Independente(X)',
             min: 0,
@@ -469,9 +469,6 @@ function gerarGraficoCorrelacao() {
 
 
 }
-
-
-
 
 //// Eventos
 botaocalcularCorrelacao.addEventListener("click", correlacao);

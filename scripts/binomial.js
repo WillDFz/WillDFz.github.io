@@ -114,7 +114,7 @@ function operacaoBinomial() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-dark", "table-bordered", "table-striped", "quadroProbBinomial");
+        quadro.classList.add("table", "table-dark", "table-bordered",  "quadroProbBinomial");
 
         campo.appendChild(quadro);
 
@@ -127,15 +127,17 @@ function operacaoBinomial() {
         let cabec = document.createElement('th');
         cabecalho.appendChild(cabec);
         cabec.innerText = "Resultado";
+        // Cria corpo da tabela
+        let tableBody = document.createElement('tbody');
+        tableBody.classList.add("table-striped");
+        quadro.appendChild(tableBody);
         // Criando cedula da tabela
         let celula = document.createElement('td');
-        quadro.appendChild(celula);
-
-
+        tableBody.appendChild(celula);
+        
         switch (indexBinomialList) {
             case 0:
                 // Probabilidade
-
                 let tamanhoN = document.getElementById("tamanhoN").value;
                 let sucesso = document.getElementById("sucesso").value;
                 let fracasso = document.getElementById("fracasso").value;
@@ -148,10 +150,7 @@ function operacaoBinomial() {
                     resultado = probabilidadeBinomial();
 
                     celula.innerText = resultado;
-
                 }
-
-
                 break;
             case 1:
                 // Media
@@ -164,10 +163,7 @@ function operacaoBinomial() {
                 } else {
                     resultado = mediaDistBinomial();
                     celula.innerText = resultado;
-
                 }
-
-
                 break;
             case 2:
                 // Desvio Padrao
@@ -181,12 +177,8 @@ function operacaoBinomial() {
                 } else {
                     resultado = desvioPadraoDistBinomial();
                     celula.innerText = resultado;
-
                 }
-
-
                 break;
-
             default:
                 break;
         }
