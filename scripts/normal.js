@@ -522,7 +522,7 @@ function operacaoNormal() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbNormal");
+        quadro.classList.add("table", "table-dark", "table-bordered", "table-striped", "quadroProbNormal");
 
         campo.appendChild(quadro);
 

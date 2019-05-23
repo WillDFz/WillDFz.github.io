@@ -950,7 +950,7 @@ function quadroDados() {
         let r = document.getElementById('rowDados');
 
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped");
+        quadro.classList.add("table", "table-dark", "table-bordered", "table-striped");
         quadro.classList.add("quadroDados");
         r.appendChild(quadro);
 
@@ -1029,7 +1029,7 @@ function quadroDadosContinua() {
         let r = document.getElementById('rowDados');
 
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped");
+        quadro.classList.add("table", "table-dark", "table-bordered", "table-striped");
         quadro.classList.add("quadroDados");
         r.appendChild(quadro);
         // Criando a linha de cabeçalho da tabela
@@ -1101,8 +1101,3 @@ function quadroDadosContinua() {
         quadroDadosContinua();
     }
 }
-
-
-
-
-

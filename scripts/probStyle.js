@@ -101,6 +101,8 @@ function selecionaCondicao() {
             entreForm.style.display = "none";
 
             minMaxForm.style.marginBottom = "0";
+
+            tamanhoN.style.display = "none";
             
 
 

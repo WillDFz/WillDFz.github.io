@@ -114,7 +114,7 @@ function operacaoBinomial() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbBinomial");
+        quadro.classList.add("table", "table-dark", "table-bordered", "table-striped", "quadroProbBinomial");
 
         campo.appendChild(quadro);
 
@@ -184,7 +184,7 @@ function operacaoBinomial() {
 
                 }
 
-               
+
                 break;
 
             default:

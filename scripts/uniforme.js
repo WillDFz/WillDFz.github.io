@@ -160,7 +160,7 @@ function operacao() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbUniforme");
+        quadro.classList.add("table",  "table-bordered", "table-striped","table-dark", "quadroProbUniforme");
 
         campo.appendChild(quadro);
 
