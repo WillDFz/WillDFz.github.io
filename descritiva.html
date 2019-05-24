@@ -64,7 +64,7 @@
 
             </div>
             <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo();" method="" name="descritiva">
+            <form id="descriForm" action="javascript:tabelaTipo();gerarGraficoDescritivo();" method="" name="descritiva">
                 
               <div class="form-group">
                 <input type="text" name="variavel" class="form-control my-input" id="variaveis"
@@ -74,6 +74,7 @@
                 <input type="text" name="dados" class="form-control my-input" id="dados"
                   placeholder="Digite os dados separados por ';'" required>
               </div>
+              <input type="file" id="myFile" class="uploadBtn" name="filename">
               <div class="form-check">
                 <div class="radio">
                   <label><input id="populacao" type="radio" name="optradio" checked> População</label>
@@ -92,12 +93,13 @@
                     <option value="porcentil">Porcentil</option>
                   </select>
 
-                  <input id="separatrizNumberInput" type="number" name="medidaNum" class="form-control my-input"
+                  <input id="separatrizNumberInput"  type="number" name="medidaNum" class="form-control my-input"
                     placeholder="">
                   </label>
                 </div>
-              </div>
+              </div> 
               <div class="text-center ">
+                
                 <button id="calcular" type="submit" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
               </div>
             </form>
@@ -110,6 +112,9 @@
     <div class="row" id="rowDados">
 
 
+
+    </div>
+    <div id="graficoDescritiva">
 
     </div>
   </div>
@@ -132,6 +137,8 @@
   <!--  -->
 
   <script src="scripts/tabela.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 
 </body>

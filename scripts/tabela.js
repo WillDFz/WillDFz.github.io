@@ -36,9 +36,6 @@ function quebraString() {
         return vetorInt;
     }
 }
-
-
-
 // Funcao pra Media
 function mediaDiscreta() {
     // Chama o vetor principal
@@ -826,8 +823,6 @@ function tabelaGenerica() {
     }
 }
 /////////////////////////////////// Criando Tabela de classes
-
-
 function tabelaDeClasses() {
     if (flag == false) {
         flag = true;
@@ -1103,3 +1098,4 @@ function quadroDadosContinua() {
         quadroDadosContinua();
     }
 }
+////////////////////////////
