@@ -5,6 +5,8 @@ let botaoCalcular = document.getElementById("calcular");
 var flag = false;
 // Flag Quadro
 var flagQ = false;
+// Flag Grafico
+var flagG = false;
 // Pega  o nome da Variavel
 function getFormVariavel() {
     let form = document.getElementById("descriForm");
@@ -28,7 +30,7 @@ function quebraString() {
     for (let i = 0; i < vetorStr.length; i++) {
         vetorInt[i] = parseFloat(vetorStr[i]);
     }
-    if (isNaN(vetorInt[0] && isNaN(vetorInt[1]))) {
+    if (isNaN(vetorInt[0]) && isNaN(vetorInt[1])) {
         vetorStr.sort();
         return vetorStr;
     } else {
@@ -248,9 +250,9 @@ function tabelaTipo() {
     // Chama Vetor de Valores
     let valores = vetorTratado[0];
     if (valores.length <= 6) {
-        return tabelaGenerica(), quadroDados();
+        return tabelaGenerica(), quadroDados(), gerarGraficoDiscritiva();
     } else {
-        return tabelaDeClasses(), quadroDadosContinua();
+        return tabelaDeClasses(), quadroDadosContinua(), gerarGraficoContinua();
     }
 }
 // Funcao de ordenacao
@@ -433,7 +435,7 @@ function desvioPadraoContinua() {
         quadrado = Math.pow(subtracao, 2);
 
         mult = quadrado * vetorAux[i];
-       
+
         somatoria += mult;
 
         primeiro = final;
@@ -577,18 +579,14 @@ function medidasSeparatrizesContinua() { //função precisa receber o vetor de v
 
     let vetLimiteInf = []
     vetLimiteInf[0] = vetTratado[0];
-
     for (let i = 1; i < numClasses; i++) {
         vetLimiteInf[i] = vetLimiteInf[i - 1] + intervalos;
-
     }
-
     let vetFacm = [];
     for (let i = 0; i < numClasses; i++) {
         freqAcm += facm[i];
         vetFacm[i] = freqAcm;
     }
-
     switch (medida) {
         case 0:
             if (medidaNum == 1 || medidaNum == 2 || medidaNum == 3 || medidaNum == 4) { //únicos Quartil que existem
@@ -681,14 +679,10 @@ function medidasSeparatrizesContinua() { //função precisa receber o vetor de v
             } else {
                 return "Medida separatriz inválida";
             }
-
     }
-
     retornoContinua = limiteInf + (((resultado - facmAnterior) / fSimples) * intervalos);
     return retornoContinua;
 }
-
-
 ///////////////////////////////////////////////////////////////////// Funcao Criar tabela /////////////////////////////////////////////
 function tabelaGenerica() {
     if (flag == false) {
@@ -698,10 +692,11 @@ function tabelaGenerica() {
         let nome = getFormVariavel();
         // Cria elemento tabela
         let tabela = document.createElement('table');
+        tabela.id = "tabelaGenerica";
         tabela.classList.add("tabela1");
         tabela.classList.add("table", "table-dark", "table-bordered", "table-striped");
         tabela.classList.add("tabela-principal");
-        let caixa = document.getElementById("caixaTabela");
+
         // Adicionando a tabela ao body
         r.appendChild(tabela);
         // Criando a linha de cabeçalho da tabela
@@ -738,9 +733,9 @@ function tabelaGenerica() {
         // Diferenciando os vetores de Valor e Repeticao com contador(vet)
         let vetorTratado = contador(vet);
         // Chama Vetor de Valores
-        let valores = vetorTratado[0];
+        var valores = vetorTratado[0];
         // Chama Vetor de Repeticoes
-        let repeticoes = vetorTratado[1];
+        var repeticoes = vetorTratado[1];
 
 
         /////////////////////// Inicio da criacao de cedulas
@@ -817,10 +812,13 @@ function tabelaGenerica() {
 
     } else {
         document.querySelector(".tabela1").remove();
-        console.log('qui');
+
         flag = false;
         tabelaGenerica();
+
     }
+
+
 }
 /////////////////////////////////// Criando Tabela de classes
 function tabelaDeClasses() {
@@ -1093,9 +1091,170 @@ function quadroDadosContinua() {
         celula6.innerText = medidasSeparatrizesContinua();
     } else {
         document.querySelector(".quadroDados").remove();
-        console.log('qui');
+
         flagQ = false;
         quadroDadosContinua();
     }
 }
-////////////////////////////
+/////////////////////////// Graficos
+// Grafico discreta
+function gerarGraficoDiscritiva() {
+    if (flagG == false) {
+        flagG = true;
+        let container = document.getElementById('graficoContainer');
+        let canvas1 = document.createElement('canvas');
+        container.appendChild(canvas1)
+        canvas1.id = 'graficoDescritiva';
+
+        var ctx = canvas1.getContext('2d');
+        canvas1.style.backgroundColor = 'rgba(54, 104, 221, 1)';
+        canvas1.style.border = '3px solid rgb(54, 104, 221) ';
+        canvas1.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
+        // Chama o vetor principal
+        let vet = quebraString();
+        // Diferenciando os vetores de Valor e Repeticao com contador(vet)
+        let vetorTratado = contador(vet);
+        // Valores
+        let valores = vetorTratado[0];
+        // Chama Vetor de Repeticao
+        let repeticoes = vetorTratado[1];
+        // Vetor de Porcentagem
+        let vetorPercent = [];
+
+
+        for (let i = 0; i < repeticoes.length; i++) {
+            vetorPercent[i] = fiPercent(repeticoes[i], vet);
+
+
+        }
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: valores,
+                datasets: [{
+                    label: 'Frequencia %',
+                    data: vetorPercent,
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,0, 1)',
+                    backgroundColor: ['#00b8ff', '#19bfff', '#32c6ff', '#4ccdff', '#66d4ff', '#7fdbff']
+                }]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: '#fff'
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: '#fff'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+
+                            fontColor: '#fff',
+                        }
+                    }]
+                }
+            }
+        });
+    } else {
+        document.getElementById("graficoDescritiva").remove();
+        flagG = false;
+        gerarGraficoDiscritiva();
+    }
+}
+// Grafico continua 
+function gerarGraficoContinua() {
+    if (flagG == false) {
+        flagG = true;
+        let container = document.getElementById('graficoContainer');
+        let canvas1 = document.createElement('canvas');
+        container.appendChild(canvas1)
+        canvas1.id = 'graficoDescritiva';
+
+        var ctx = canvas1.getContext('2d');
+        canvas1.style.backgroundColor = 'rgba(54, 104, 221, 1)';
+        canvas1.style.border = '3px solid rgb(54, 104, 221) ';
+        canvas1.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
+        // Chama o vetor principal
+        let vet = quebraString();
+        // Diferenciando os vetores de Valor e Repeticao com contador(vet)
+        let vetorTratado = contador(vet);
+        // Valores
+        let valores = vetorTratado[0];
+        // Chama Vetor de Repeticao
+        let repeticoes = vetorTratado[1];
+        // Vetor de Porcentagem
+        let vetorPercent = [];
+
+
+        // Labels variaveis e intervalos
+        /// Definindo range entre as variaveis
+        let range = rangeClasses(quebraString());
+        // Intervalo entre variaveis
+        let intervalos = range[0];
+        // Numero de classes
+        let classes = range[1];
+
+        let primeiro = vet[0];
+        let final = primeiro + intervalos;
+
+        let vetValores = [];
+
+        for (let i = 0; i < classes; i++) {
+            vetValores[i] = primeiro + "|-- " + final;
+
+            primeiro = final;
+            final += intervalos;
+        }
+
+        for (let i = 0; i < repeticoes.length; i++) {
+            vetorPercent[i] = fiPercent(repeticoes[i], vet);
+        }
+        let dados = acmContinua(vet);
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: vetValores,
+                datasets: [{
+                    label: 'Frequencia %',
+                    data: dados,
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,0, 1)',
+                    backgroundColor: 'rgba(255,255,255, 1)',
+                }]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: '#fff'
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: '#fff'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+
+                            fontColor: '#fff',
+                        }
+                    }]
+                }
+            }
+        });
+
+    } else {
+        document.getElementById("graficoDescritiva").remove();
+        flagG = false;
+        gerarGraficoContinua();
+    }
+}

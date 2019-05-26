@@ -58,14 +58,15 @@
         <div class="card my-5">
           <div class="card-body">
             <div class="text-center">
-              
+
               <img src="media/lapis.png">
-              <a href="user.html" data-toggle="tooltip" title="Voltar" class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img class="returnoImagem" src="media/return.png"/></a>
+              <a href="user.html" data-toggle="tooltip" title="Voltar" class="returnoBtn btn-light btn tx-tfm"
+                role="button" aria-pressed="true"><img class="returnoImagem" src="media/return.png" /></a>
 
             </div>
             <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo();gerarGraficoDescritivo();" method="" name="descritiva">
-                
+            <form id="descriForm" action="javascript:tabelaTipo();" method="" name="descritiva">
+
               <div class="form-group">
                 <input type="text" name="variavel" class="form-control my-input" id="variaveis"
                   placeholder="Nome da Variavel" required>
@@ -74,7 +75,7 @@
                 <input type="text" name="dados" class="form-control my-input" id="dados"
                   placeholder="Digite os dados separados por ';'" required>
               </div>
-              <input type="file" id="myFile" class="uploadBtn" name="filename">
+              
               <div class="form-check">
                 <div class="radio">
                   <label><input id="populacao" type="radio" name="optradio" checked> População</label>
@@ -93,13 +94,13 @@
                     <option value="porcentil">Porcentil</option>
                   </select>
 
-                  <input id="separatrizNumberInput"  type="number" name="medidaNum" class="form-control my-input"
+                  <input id="separatrizNumberInput" type="number" name="medidaNum" class="form-control my-input"
                     placeholder="">
                   </label>
                 </div>
-              </div> 
+              </div>
               <div class="text-center ">
-                
+
                 <button id="calcular" type="submit" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
               </div>
             </form>
@@ -114,9 +115,11 @@
 
 
     </div>
-    <div id="graficoDescritiva">
+<div id="graficoContainer">
+    
+</div>
+  
 
-    </div>
   </div>
   </div>
   <!-- /.container -->
@@ -137,8 +140,9 @@
   <!--  -->
 
   <script src="scripts/tabela.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
 </body>
