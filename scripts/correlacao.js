@@ -150,6 +150,7 @@ function regressao() {
 
     xLinha = a;
     yLinha = b;
+   
     console.log(xLinha);
     console.log(yLinha);
     console.log((a + " . X + " + b + " = Y"));
@@ -217,7 +218,7 @@ function gerarGraficoCorrelacao() {
 
     regressao();
     // Tema do grafico
-    Highcharts.theme = {
+    /*Highcharts.theme = {
         colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
             '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
         ],
@@ -422,7 +423,7 @@ function gerarGraficoCorrelacao() {
         maskColor: 'rgba(255,255,255,0.3)'
     };
     /// Aplica tema
-    Highcharts.setOptions(Highcharts.theme);
+    Highcharts.setOptions(Highcharts.theme);*/
     // Criando grafico
     Highcharts.chart('containerGrafico', {
         xAxis: {
@@ -466,6 +467,12 @@ function gerarGraficoCorrelacao() {
             }
         }]
     });
+
+
+
+
+
+
 
 
 }

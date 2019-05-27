@@ -58,7 +58,7 @@
           <div class="card-body text-center">
             <img src="media/entrar.png">
             <h5 class="card-title text-center">Entrar</h5>
-            <form class="form-signin" action="user.html">
+            <form class="form-signin" action="javascript:validarPassReset();" method="" name="login">
               <div class="form-group">
                 <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" name="usuario" required
                   autofocus>
@@ -71,9 +71,8 @@
 
               </div>
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Esqueceu a senha?</label>
+              <div class="form-group mb-3">
+                <a id="passReset" href="reset-password.html">Esqueceu a senha?</a>
               </div>
               <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">Entrar</button>
               <hr class="my-4">
@@ -101,6 +100,8 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="scripts/login.js"></script>
 
 </body>
 

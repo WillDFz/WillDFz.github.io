@@ -1107,7 +1107,7 @@ function gerarGraficoDiscritiva() {
         canvas1.id = 'graficoDescritiva';
 
         var ctx = canvas1.getContext('2d');
-        canvas1.style.backgroundColor = 'rgba(54, 104, 221, 1)';
+        canvas1.style.backgroundColor = 'rgba(255, 255, 255, 1)';
         canvas1.style.border = '3px solid rgb(54, 104, 221) ';
         canvas1.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
         // Chama o vetor principal
@@ -1142,20 +1142,20 @@ function gerarGraficoDiscritiva() {
             options: {
                 legend: {
                     labels: {
-                        fontColor: '#fff'
+                        fontColor: '#000'
                     }
                 },
                 scales: {
                     xAxes: [{
                         ticks: {
-                            fontColor: '#fff'
+                            fontColor: '#000'
                         }
                     }],
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
 
-                            fontColor: '#fff',
+                            fontColor: '#000',
                         }
                     }]
                 }
@@ -1177,7 +1177,7 @@ function gerarGraficoContinua() {
         canvas1.id = 'graficoDescritiva';
 
         var ctx = canvas1.getContext('2d');
-        canvas1.style.backgroundColor = 'rgba(54, 104, 221, 1)';
+        canvas1.style.backgroundColor = 'rgba(255, 255, 255, 1)';
         canvas1.style.border = '3px solid rgb(54, 104, 221) ';
         canvas1.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
         // Chama o vetor principal
@@ -1224,28 +1224,51 @@ function gerarGraficoContinua() {
                 datasets: [{
                     label: 'Frequencia %',
                     data: dados,
-                    borderWidth: 1,
-                    borderColor: 'rgba(0,0,0, 1)',
-                    backgroundColor: 'rgba(255,255,255, 1)',
+                    //borderWidth: 0,
+                    //borderColor: 'rgba(255,255,255, 1)',
+                    backgroundColor: ['rgba(72, 61, 139, 1)',
+
+                    'rgba(0, 0, 255, 1)',
+
+                    'rgba(54, 162, 235, 1)',                
+
+                    'rgba(75, 192, 192, 1)',
+
+                    'rgba(25, 25, 112, 1)',
+
+                    'rgba(100, 149, 237, 1)',
+
+                    'rgba(0, 250, 154, 1)',
+
+                    'rgba(148, 0, 211, 1)',
+
+                    'rgba(153, 102, 255, 1)',
+
+                    'rgba(47, 79, 79, 1)',
+
+                    'rgba(119, 136, 153, 1)']
                 }]
             },
             options: {
                 legend: {
                     labels: {
-                        fontColor: '#fff'
+                        fontColor: '#000'
                     }
                 },
                 scales: {
+
                     xAxes: [{
+                        categoryPercentage: 1.0,
+                        barPercentage: 1.0,
                         ticks: {
-                            fontColor: '#fff'
+                            fontColor: '#000'
                         }
                     }],
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
 
-                            fontColor: '#fff',
+                            fontColor: '#000',
                         }
                     }]
                 }

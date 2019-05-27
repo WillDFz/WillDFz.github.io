@@ -157,7 +157,9 @@
 
  	margin: auto;
  }
-
+ .resetCenter{
+	 flex-direction: inherit;
+ }
  .quadroProbUniforme {
  	position: relative;
 
@@ -189,6 +191,11 @@
  	font-size: 200%;
  	text-shadow: 0 0 3px #48a0dc;
  }
+ #passReset{
+	color: #000;
+	font-weight: bold;
+ }
+ 
 
  #graficoDescritiva{
 	 
@@ -360,7 +367,17 @@
 
  	.quadroProbNormal {
  		width: 450px;
- 	}
+	 }
+	 #passResetForm{
+		width: 335px;
+		height: 315px;
+
+	}
+	#innerFormReset{
+		width: 100%;
+		position: relative;
+
+	}
  }
 
  @media(min-width: 992px) {
