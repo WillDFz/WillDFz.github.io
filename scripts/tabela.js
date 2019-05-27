@@ -1211,11 +1211,11 @@ function gerarGraficoContinua() {
             primeiro = final;
             final += intervalos;
         }
-
+        let vetorAux = acmContinua(quebraString());
         for (let i = 0; i < repeticoes.length; i++) {
-            vetorPercent[i] = fiPercent(repeticoes[i], vet);
+            vetorPercent[i] = fiPercent(vetorAux[i], vet);
         }
-        let dados = acmContinua(vet);
+        let dados = vetorPercent;
 
         var myBarChart = new Chart(ctx, {
             type: 'bar',
@@ -1224,8 +1224,7 @@ function gerarGraficoContinua() {
                 datasets: [{
                     label: 'Frequencia %',
                     data: dados,
-                    //borderWidth: 0,
-                    //borderColor: 'rgba(255,255,255, 1)',
+                   
                     backgroundColor: ['rgba(72, 61, 139, 1)',
 
                     'rgba(0, 0, 255, 1)',
