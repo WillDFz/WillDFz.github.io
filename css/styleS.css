@@ -195,10 +195,12 @@
 	color: #000;
 	font-weight: bold;
  }
- 
+ #graficoContainer{
+	 width: 90%;
+ }
 
  #graficoDescritiva{
-	 
+	width: 90%;
  }
 
  #rowDados {
