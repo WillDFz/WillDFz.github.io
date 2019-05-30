@@ -60,49 +60,21 @@
             <div class="text-center">
 
               <img src="media/lapis.png">
-              <a href="descritiva-question.html" data-toggle="tooltip" title="Voltar"
-                class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img class="returnoImagem"
-                  src="media/return.png" /></a>
+              <a href="user.html" data-toggle="tooltip" title="Voltar" class="returnoBtn btn-light btn tx-tfm"
+                role="button" aria-pressed="true"><img class="returnoImagem" src="media/return.png" /></a>
 
             </div>
             <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo();" method="" name="descritiva">
+            <form id="descriForm" action="" method="" name="descritiva">
 
-              <div class="form-group">
-                <input type="text" name="variavel" class="form-control my-input" id="variaveis"
-                  placeholder="Nome da Variavel" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="dados" class="form-control my-input" id="dados"
-                  placeholder="Digite os dados separados por ';'" required>
-              </div>
 
-              <div class="form-check">
-                <div class="radio">
-                  <label><input id="populacao" type="radio" name="optradio" checked> População</label>
-                </div>
-                <div class="radio">
-                  <label><input id="amostra" type="radio" name="optradio"> Amostra</label>
-                </div>
-                <hr class="my-4">
-                <label>Medidas Separatrizes:</label>
-                <div class="form-group">
-
-                  <select id="separatrizes" class="form-group">
-                    <option value="quartil">Quartil</option>
-                    <option value="quintil">Quintil</option>
-                    <option value="decil">Decil</option>
-                    <option value="porcentil">Porcentil</option>
-                  </select>
-
-                  <input id="separatrizNumberInput" type="number" name="medidaNum" class="form-control my-input"
-                    placeholder="">
-
-                </div>
-              </div>
               <div class="text-center ">
-
-                <button id="calcular" type="submit" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
+                <label for="">Inserir manualmente ou importar arquivo?(.csv)</label>
+              
+                <button id="descritivaManual" type="button" class=" btn btn-dark btn-block tx-tfm"><a
+                  href="descritiva.html">Manual</a></button>
+                <button id="descritivaImportar" type="button" class=" btn btn-dark btn-block tx-tfm"><a
+                  href="descritiva-importar.html">Importar</a></button>
               </div>
             </form>
           </div>
@@ -111,14 +83,8 @@
     </div>
     <!-- /.row -->
     <!-- Dados Row -->
-    <div class="row" id="rowDados">
 
 
-
-    </div>
-    <div id="graficoContainer">
-
-    </div>
 
 
   </div>

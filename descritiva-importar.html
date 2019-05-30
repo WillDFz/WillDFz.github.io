@@ -66,15 +66,10 @@
 
             </div>
             <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo();" method="" name="descritiva">
-
+            <form id="descriForm" action="javascript:tabelaTipo()" method="" name="descritiva">
               <div class="form-group">
                 <input type="text" name="variavel" class="form-control my-input" id="variaveis"
                   placeholder="Nome da Variavel" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="dados" class="form-control my-input" id="dados"
-                  placeholder="Digite os dados separados por ';'" required>
               </div>
 
               <div class="form-check">
@@ -84,7 +79,6 @@
                 <div class="radio">
                   <label><input id="amostra" type="radio" name="optradio"> Amostra</label>
                 </div>
-                <hr class="my-4">
                 <label>Medidas Separatrizes:</label>
                 <div class="form-group">
 
@@ -99,11 +93,19 @@
                     placeholder="">
 
                 </div>
-              </div>
-              <div class="text-center ">
-
-                <button id="calcular" type="submit" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
-              </div>
+                <hr class="my-4">
+                <div class="text-center ">
+                  <h6>Importacao de arquivo(.csv)</h6>
+                </div>
+                <div class="form-group text-center">
+                  <div class="">
+                    <input type="file" onchange="getCSV(this)" class="" id="">
+                  </div>
+                </div>
+                <hr class="my-4">
+                <div class="text-center">
+                  <button class="btn btn-dark" type="submit">Importar</button>
+                </div>
             </form>
           </div>
         </div>
@@ -139,6 +141,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!--  -->
+
 
   <script src="scripts/tabela.js"></script>
 

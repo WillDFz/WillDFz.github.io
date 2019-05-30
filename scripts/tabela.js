@@ -1,12 +1,26 @@
 'use strict'
 // Botao Calcular
 let botaoCalcular = document.getElementById("calcular");
+
+var crow = [];
 // Flag Tabela
 var flag = false;
 // Flag Quadro
 var flagQ = false;
 // Flag Grafico
 var flagG = false;
+///////////////   Funcoes de importacao ////////////////////////////////////
+function getCSV(file) {
+    let reader = new FileReader();
+    let arquivoSelecionado = file.files[0];
+    reader.readAsText(arquivoSelecionado);
+    reader.onload = function () {
+        console.log(reader.result);
+        crow = reader.result;
+    }
+}
+
+//////////////////////////////////////////////////////
 // Pega  o nome da Variavel
 function getFormVariavel() {
     let form = document.getElementById("descriForm");
@@ -15,8 +29,14 @@ function getFormVariavel() {
 }
 // Pega os Valores no campo
 function getFormValor() {
-    let form = document.getElementById("descriForm");
-    let valor = form.dados.value;
+    let valor;
+    if (crow.length < 1) {
+        let form = document.getElementById("descriForm");
+        valor = form.dados.value;
+    } else {
+        valor = crow;
+        
+    }
     return valor;
 }
 // Funcao para usar separador e transformar string em array
@@ -1136,7 +1156,28 @@ function gerarGraficoDiscritiva() {
                     data: vetorPercent,
                     borderWidth: 1,
                     borderColor: 'rgba(0,0,0, 1)',
-                    backgroundColor: ['#00b8ff', '#19bfff', '#32c6ff', '#4ccdff', '#66d4ff', '#7fdbff']
+                    backgroundColor: ['rgba(72, 61, 139, 1)',
+
+                        'rgba(0, 0, 255, 1)',
+
+                        'rgba(54, 162, 235, 1)',
+
+                        'rgba(75, 192, 192, 1)',
+
+                        'rgba(25, 25, 112, 1)',
+
+                        'rgba(100, 149, 237, 1)',
+
+                        'rgba(0, 250, 154, 1)',
+
+                        'rgba(148, 0, 211, 1)',
+
+                        'rgba(153, 102, 255, 1)',
+
+                        'rgba(47, 79, 79, 1)',
+
+                        'rgba(119, 136, 153, 1)'
+                    ]
                 }]
             },
             options: {
@@ -1224,28 +1265,29 @@ function gerarGraficoContinua() {
                 datasets: [{
                     label: 'Frequencia %',
                     data: dados,
-                   
+
                     backgroundColor: ['rgba(72, 61, 139, 1)',
 
-                    'rgba(0, 0, 255, 1)',
+                        'rgba(0, 0, 255, 1)',
 
-                    'rgba(54, 162, 235, 1)',                
+                        'rgba(54, 162, 235, 1)',
 
-                    'rgba(75, 192, 192, 1)',
+                        'rgba(75, 192, 192, 1)',
 
-                    'rgba(25, 25, 112, 1)',
+                        'rgba(25, 25, 112, 1)',
 
-                    'rgba(100, 149, 237, 1)',
+                        'rgba(100, 149, 237, 1)',
 
-                    'rgba(0, 250, 154, 1)',
+                        'rgba(0, 250, 154, 1)',
 
-                    'rgba(148, 0, 211, 1)',
+                        'rgba(148, 0, 211, 1)',
 
-                    'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
 
-                    'rgba(47, 79, 79, 1)',
+                        'rgba(47, 79, 79, 1)',
 
-                    'rgba(119, 136, 153, 1)']
+                        'rgba(119, 136, 153, 1)'
+                    ]
                 }]
             },
             options: {
@@ -1280,3 +1322,6 @@ function gerarGraficoContinua() {
         gerarGraficoContinua();
     }
 }
+
+///////////////////////////////////////////////////
+
