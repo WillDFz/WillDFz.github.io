@@ -120,11 +120,6 @@ function regressao() {
         somatoriaYQuadrado += vetYQuadrado[i];
         somatoriaMultXY += vetMultXY[i];
     }
-
-
-
-
-
     /////////////// encontrando o valor de A (pode fazer uma função pra isso)
     let aux1 = (amostra * somatoriaMultXY) - (somatoriaX * somatoriaY);
 
@@ -133,26 +128,13 @@ function regressao() {
     a = aux1 / aux2;
     a = a.toFixed(2);
     a = parseFloat(a);
-
-
-
-
-
     /////////////// encontrando o valor de B (pode fazer uma função pra isso)
     let mediaX = somatoriaX / amostra; //média dos valores de X
     let mediaY = somatoriaY / amostra; //média dos valores de Y
     b = mediaY - (a * mediaX);
     b = b.toFixed(2);
     b = parseFloat(b);
-
-    /// Gambiarra culpa do Danilo --'//////////
-
-    xLinha = a;
-    yLinha = b;
-
-    console.log(xLinha);
-    console.log(yLinha);
-    console.log((a + " . X + " + b + " = Y"));
+   
     return (a + " . X + " + b + " = Y"); //retornar esta equação de primeiro grau
 
 }
@@ -187,8 +169,6 @@ function regressaoAlteravel(valor, valorParametro) {
         resultado = parseFloat(resultado);
         return "Se y vale " + valor + ", x é igual a: " + resultado;
     }
-
-
 }
 
 function juncaoXY() {
@@ -226,14 +206,26 @@ function gerarGraficoCorrelacao() {
 
     // Define os menores valores nos vetores
     let x1 = Math.min.apply(Math, xGrafico);
-    let y1 = Math.min.apply(Math, yGrafico);
+    
+    let c = regressao();
+
+    let a = []
+    a = c[0] + c[1] + c[2] + c[3]; //encontrando o valor de A
+    a = parseFloat(a);
+
+
+    let b = []
+    b = c[11] + c[12] + c[13] + c[14]; //encontrando o valor de B
+    b = parseFloat(b);
+
+    let y1 = ((a * x1) + b); 
 
     // Insere X1 e Y1 ao vetor de menores pontos
     vetMenores.push(x1);
     vetMenores.push(y1);
     // Define os maiores valores nos vetores
     let x2 = Math.max.apply(Math, xGrafico);
-    let y2 = Math.max.apply(Math, yGrafico);
+    let y2 = ((a * x2) + b);
     // Insere X2 e Y2 ao vetor de maiores pontos
     vetMaiores.push(x2);
     vetMaiores.push(y2);
