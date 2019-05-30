@@ -212,6 +212,18 @@ function gerarGraficoCorrelacao() {
     let vetMenores = [];
     let vetMaiores = [];
 
+
+    let container = document.getElementById('containerGrafico');
+    container.style.border = '3px solid rgb(54, 104, 221) ';
+    container.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
+
+    
+    let canvas = document.createElement('div');
+    container.appendChild(canvas);
+    canvas.id = 'graficoCorrelacao';
+    
+
+
     // Define os menores valores nos vetores
     let x1 = Math.min.apply(Math, xGrafico);
     let y1 = Math.min.apply(Math, yGrafico);
