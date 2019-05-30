@@ -12,7 +12,7 @@ var yLinha;
 //////////////// GETS /////////////////////
 //Pega X (X)
 function getXCorrelacao() {
-     // Pega valor do campo
+    // Pega valor do campo
     let x = formCorrelacao.x.value;
     // Remove espacos
     let valor = x.replace(/\s+/g, '');
@@ -43,7 +43,6 @@ function getYCorrelacao() {
 
 
 function correlacao() {
-
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
     let vetY = getYCorrelacao(); //vetor das variáveis dependentes
 
@@ -83,6 +82,7 @@ function correlacao() {
     r = parseFloat(r);
 
     let rPorcent = r * 100; //resultado em porcentagem 
+    console.log(rPorcent);
 
 
     if (r >= 0.6 && r <= 1) { //3 condicionais pra avaliar o nível de correlação
@@ -95,7 +95,6 @@ function correlacao() {
 }
 
 function regressao() {
-
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
     let vetY = getYCorrelacao(); //vetor das variáveis dependentes
 
@@ -150,7 +149,7 @@ function regressao() {
 
     xLinha = a;
     yLinha = b;
-   
+
     console.log(xLinha);
     console.log(yLinha);
     console.log((a + " . X + " + b + " = Y"));
@@ -202,7 +201,6 @@ function juncaoXY() {
 
 
     }
-    console.log(vetorXY);
     return vetorXY;
 }
 
@@ -211,219 +209,27 @@ function juncaoXY() {
 function gerarGraficoCorrelacao() {
     let xGrafico = getXCorrelacao();
     let yGrafico = getYCorrelacao();
+    let vetMenores = [];
+    let vetMaiores = [];
+
+    // Define os menores valores nos vetores
+    let x1 = Math.min.apply(Math, xGrafico);
+    let y1 = Math.min.apply(Math, yGrafico);
+
+    // Insere X1 e Y1 ao vetor de menores pontos
+    vetMenores.push(x1);
+    vetMenores.push(y1);
+    // Define os maiores valores nos vetores
+    let x2 = Math.max.apply(Math, xGrafico);
+    let y2 = Math.max.apply(Math, yGrafico);
+    // Insere X2 e Y2 ao vetor de maiores pontos
+    vetMaiores.push(x2);
+    vetMaiores.push(y2);
 
     let vetXY = juncaoXY();
-    console.log(xGrafico);
-    console.log(yGrafico);
+
 
     regressao();
-    // Tema do grafico
-    /*Highcharts.theme = {
-        colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
-            '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
-        ],
-        chart: {
-            backgroundColor: {
-                linearGradient: {
-                    x1: 0,
-                    y1: 0,
-                    x2: 1,
-                    y2: 1
-                },
-                stops: [
-                    [0, '#2a2a2b'],
-                    [1, '#3e3e40']
-                ]
-            },
-            style: {
-                fontFamily: '\'Unica One\', sans-serif'
-            },
-            plotBorderColor: '#606063'
-        },
-        title: {
-            style: {
-                color: '#E0E0E3',
-                textTransform: 'uppercase',
-                fontSize: '20px'
-            }
-        },
-        subtitle: {
-            style: {
-                color: '#E0E0E3',
-                textTransform: 'uppercase'
-            }
-        },
-        xAxis: {
-            gridLineColor: '#707073',
-            labels: {
-                style: {
-                    color: '#E0E0E3'
-                }
-            },
-            lineColor: '#707073',
-            minorGridLineColor: '#505053',
-            tickColor: '#707073',
-            title: {
-                style: {
-                    color: '#A0A0A3'
-
-                }
-            }
-        },
-        yAxis: {
-            gridLineColor: '#707073',
-            labels: {
-                style: {
-                    color: '#E0E0E3'
-                }
-            },
-            lineColor: '#707073',
-            minorGridLineColor: '#505053',
-            tickColor: '#707073',
-            tickWidth: 1,
-            title: {
-                style: {
-                    color: '#A0A0A3'
-                }
-            }
-        },
-        tooltip: {
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-            style: {
-                color: '#F0F0F0'
-            }
-        },
-        plotOptions: {
-            series: {
-                dataLabels: {
-                    color: '#B0B0B3'
-                },
-                marker: {
-                    lineColor: '#333'
-                }
-            },
-            boxplot: {
-                fillColor: '#505053'
-            },
-            candlestick: {
-                lineColor: 'white'
-            },
-            errorbar: {
-                color: 'white'
-            }
-        },
-        legend: {
-            itemStyle: {
-                color: '#E0E0E3'
-            },
-            itemHoverStyle: {
-                color: '#FFF'
-            },
-            itemHiddenStyle: {
-                color: '#606063'
-            }
-        },
-        credits: {
-            style: {
-                color: '#666'
-            }
-        },
-        labels: {
-            style: {
-                color: '#707073'
-            }
-        },
-
-        drilldown: {
-            activeAxisLabelStyle: {
-                color: '#F0F0F3'
-            },
-            activeDataLabelStyle: {
-                color: '#F0F0F3'
-            }
-        },
-
-        navigation: {
-            buttonOptions: {
-                symbolStroke: '#DDDDDD',
-                theme: {
-                    fill: '#505053'
-                }
-            }
-        },
-
-        // scroll charts
-        rangeSelector: {
-            buttonTheme: {
-                fill: '#505053',
-                stroke: '#000000',
-                style: {
-                    color: '#CCC'
-                },
-                states: {
-                    hover: {
-                        fill: '#707073',
-                        stroke: '#000000',
-                        style: {
-                            color: 'white'
-                        }
-                    },
-                    select: {
-                        fill: '#000003',
-                        stroke: '#000000',
-                        style: {
-                            color: 'white'
-                        }
-                    }
-                }
-            },
-            inputBoxBorderColor: '#505053',
-            inputStyle: {
-                backgroundColor: '#333',
-                color: 'silver'
-            },
-            labelStyle: {
-                color: 'silver'
-            }
-        },
-
-        navigator: {
-            handles: {
-                backgroundColor: '#666',
-                borderColor: '#AAA'
-            },
-            outlineColor: '#CCC',
-            maskFill: 'rgba(255,255,255,0.1)',
-            series: {
-                color: '#7798BF',
-                lineColor: '#A6C7ED'
-            },
-            xAxis: {
-                gridLineColor: '#505053'
-            }
-        },
-
-        scrollbar: {
-            barBackgroundColor: '#808083',
-            barBorderColor: '#808083',
-            buttonArrowColor: '#CCC',
-            buttonBackgroundColor: '#606063',
-            buttonBorderColor: '#606063',
-            rifleColor: '#FFF',
-            trackBackgroundColor: '#404043',
-            trackBorderColor: '#404043'
-        },
-
-        // special colors for some of the
-        legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
-        background2: '#505053',
-        dataLabelsColor: '#B0B0B3',
-        textColor: '#C0C0C0',
-        contrastTextColor: '#F0F0F3',
-        maskColor: 'rgba(255,255,255,0.3)'
-    };
-    /// Aplica tema
-    Highcharts.setOptions(Highcharts.theme);*/
     // Criando grafico
     Highcharts.chart('containerGrafico', {
         xAxis: {
@@ -445,10 +251,10 @@ function gerarGraficoCorrelacao() {
             regression: true,
             type: 'line',
             name: 'Linha de Regressao',
-            data: [
-                [xLinha],
-                [yLinha]
+            data: [vetMaiores, vetMenores
+
             ],
+
             marker: {
                 enabled: true
             },
