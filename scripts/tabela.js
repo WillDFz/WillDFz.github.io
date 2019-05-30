@@ -19,7 +19,6 @@ function getCSV(file) {
         crow = reader.result;
     }
 }
-
 //////////////////////////////////////////////////////
 // Pega  o nome da Variavel
 function getFormVariavel() {
@@ -193,27 +192,16 @@ function medianaContinua() {
             }
         }
     }
-
-
-
-
     retornoMedianaContinua = limiteInf + (((resultado - facmAnterior) / fSimples) * intervalos);
     return retornoMedianaContinua.toFixed(2);
-
-
-
 }
-
 function modaContinua() {
     /// Definindo range entre as variaveis
     let range = rangeClasses(quebraString());
     // Intervalo entre variaveis
     let intervalos = range[0];
-
     let maior = 0;
     let vetorFreqclasses = acmContinua(quebraString());
-
-
     for (let i = 0; i < vetorFreqclasses.length; i++) {
         if (vetorFreqclasses[i] > maior) {
             maior = vetorFreqclasses[i];
@@ -222,15 +210,10 @@ function modaContinua() {
     let indexMaior = vetorFreqclasses.indexOf(maior);
     let celula = document.querySelector(".range" + indexMaior).innerText;
     let vetorPronto = celula.split("|-- ");
-
     let soma = (parseFloat(vetorPronto[0]) + parseFloat(vetorPronto[1]));
-
     let media = soma / 2;
-
     return media;
 }
-
-
 function moda() {
     // Chama o vetor principal
     let vet = quebraString();
@@ -260,8 +243,6 @@ function moda() {
     }
     return modaVet;
 }
-
-
 function tabelaTipo() {
     // Chama o vetor principal
     let vet = quebraString();
