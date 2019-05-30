@@ -202,7 +202,9 @@
  #graficoDescritiva{
 	width: 90%;
  }
-
+ #containerGrafico{
+	 box-sizing: content-box;
+ }
  #rowDados {
  	padding-bottom: 15%;
  }
