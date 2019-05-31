@@ -65,41 +65,14 @@
                   src="media/return.png" /></a>
 
             </div>
-            <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo()" method="" name="descritiva">
-              <div class="form-group">
-                <input type="text" name="variavel" class="form-control my-input" id="variaveis"
-                  placeholder="Nome da Variavel" required>
-              </div>
-
-              <div class="form-check">
-                <div class="radio">
-                  <label><input id="populacao" type="radio" name="optradio" checked> População</label>
-                </div>
-                <div class="radio">
-                  <label><input id="amostra" type="radio" name="optradio"> Amostra</label>
-                </div>
-                <label>Medidas Separatrizes:</label>
-                <div class="form-group">
-
-                  <select id="separatrizes" class="form-group">
-                    <option value="quartil">Quartil</option>
-                    <option value="quintil">Quintil</option>
-                    <option value="decil">Decil</option>
-                    <option value="porcentil">Porcentil</option>
-                  </select>
-
-                  <input id="separatrizNumberInput" type="number" name="medidaNum" class="form-control my-input"
-                    placeholder="">
-
-                </div>
-                <hr class="my-4">
+            <h5 class="card-title text-center">Correlacao</h5>
+            <form id="descriForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="descritiva">
                 <div class="text-center ">
                   <h6>Importacao de arquivo(.csv)</h6>
                 </div>
                 <div class="form-group text-center">
                   <div class="">
-                    <input type="file" onchange="getCSV(this)" class="" id="">
+                    <input type="file" onchange="getCSVCorrelacao(this)" class="" id="">
                   </div>
                 </div>
                 <hr class="my-4">
@@ -118,7 +91,9 @@
 
 
     </div>
-    <div id="graficoContainer">
+    <div id="containerGrafico">
+
+
 
     </div>
 
@@ -141,12 +116,12 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!--  -->
+  <script src="scripts/correlacao.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+  
 
-  <script src="scripts/tabela.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
 </body>

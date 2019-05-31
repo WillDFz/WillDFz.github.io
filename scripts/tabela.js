@@ -15,7 +15,6 @@ function getCSV(file) {
     let arquivoSelecionado = file.files[0];
     reader.readAsText(arquivoSelecionado);
     reader.onload = function () {
-        console.log(reader.result);
         crow = reader.result;
     }
 }
@@ -33,8 +32,7 @@ function getFormValor() {
         let form = document.getElementById("descriForm");
         valor = form.dados.value;
     } else {
-        valor = crow;
-        
+        valor = crow;  
     }
     return valor;
 }
@@ -75,7 +73,6 @@ function mediaDiscreta() {
     let media = (acm / vet.length).toFixed(2);
     return media;
 }
-
 function mediaContinua() {
 
     let fi = acmContinua(quebraString());

@@ -3,10 +3,10 @@
 let redirecionamentoContador = document.getElementById('redirecionamentoContador');
 
 function redirecionarHome() {
-    var time = 20000;
+    var time = 10000;
     var contador = (time / 1000);
     setTimeout(function () {
-        window.location.href = "/index.html";
+        window.location.href = "/user.html";
     }, time);
     setInterval(
         function () {

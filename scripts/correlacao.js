@@ -7,40 +7,100 @@ let botaocalcularCorrelacao = document.getElementById("calcularCorrelacao");
 // Flag pra deletar elemento
 let flagElementoCorrelacao = false;
 
-var xLinha;
-var yLinha;
+var crowCorrelacao = [];
+var crowX = [];
+var crowY = [];
 //////////////// GETS /////////////////////
+function getCSVCorrelacao(file) {
+    let reader = new FileReader();
+    let arquivoSelecionado = file.files[0];
+    reader.readAsText(arquivoSelecionado);
+    reader.onload = function () {
+        crowCorrelacao = reader.result;
+        console.log(crowCorrelacao);
+    }
+}
 //Pega X (X)
 function getXCorrelacao() {
-    // Pega valor do campo
-    let x = formCorrelacao.x.value;
-    // Remove espacos
-    let valor = x.replace(/\s+/g, '');
-    // Separa por ; e transforma em vetor
-    let xSplit = valor.split(";");
-    let xVetorInt = [];
-    for (let i = 0; i < xSplit.length; i++) {
-        xVetorInt[i] = parseInt(xSplit[i]);
+    let x;
+    let vetorJunto;
+    let meio;
+    let xSplit;
+    let vetorX;
+    let vetorXFloat = [];
+    if (crowCorrelacao.length < 1) {
+        // Pega valor do campo
+        x = formCorrelacao.x.value;
+        // Remove espacos
+        x.replace(/\s+/g, '');
+        // Separa por ; e transforma em vetor
+        vetorX = x.split(";");
+    } else {
+        // remove virgula
+        let trocaVirgula = crowCorrelacao.replace(/,/g, '.');
+        let espacos = trocaVirgula.replace(/\n+/g, ';');
+        // Cria vetor sem quebra de linha
+        vetorJunto = espacos.replace(/\s+/g, '');
+        // Remove espacos
+        vetorJunto.replace(/\s+/g, '');
+        // Separa por ; e transforma em vetor
+        xSplit = vetorJunto.split(";");
+        for (let i = 0; i < xSplit.length; i++) {
+            vetorXFloat[i] = parseFloat(xSplit[i]);
+        }
+        // Meio do vetor
+        meio = (vetorXFloat.length / 2);
+        // Separa do inicio ao meio
+        vetorX = vetorXFloat.slice(0, meio);
     }
+    let xVetorInt = [];
+    for (let i = 0; i < vetorX.length; i++) {
+        xVetorInt[i] = parseFloat(vetorX[i]);
+    }
+    console.log(xVetorInt);
     return xVetorInt;
 }
 //Pega Y (Y)
 function getYCorrelacao() {
-    // Pega valor do campo
-    let y = formCorrelacao.y.value;
-    // Remove espacos
-    let valor = y.replace(/\s+/g, '');
-    // Separa por ; e transforma em vetor
-    let ySplit = valor.split(";");
-    let yVetorInt = [];
-    for (let i = 0; i < ySplit.length; i++) {
-        yVetorInt[i] = parseInt(ySplit[i]);
+    let y;
+    let vetorJunto;
+    let meio;
+    let ySplit;
+    let vetorY;
+    let vetorYFloat = [];
+    if (crowCorrelacao.length < 1) {
+        // Pega valor do campo
+        y = formCorrelacao.y.value;
+        // Remove espacos
+        y.replace(/\s+/g, '');
+        // Separa por ; e transforma em vetor
+        vetorY = y.split(";");
+    } else {
+        // remove virgula
+        let trocaVirgula = crowCorrelacao.replace(/,/g, '.');
+        let espacos = trocaVirgula.replace(/\n+/g, ';');
+        // Cria vetor sem quebra de linha
+        vetorJunto = espacos.replace(/\s+/g, '');
+        // Remove espacos
+        vetorJunto.replace(/\s+/g, '');
+        // Separa por ; e transforma em vetor
+        ySplit = vetorJunto.split(";");
+        for (let i = 0; i < ySplit.length; i++) {
+            vetorYFloat[i] = parseFloat(ySplit[i]);
+        }
+        // Meio do vetor
+        meio = (vetorYFloat.length / 2);
+        // Separa do meio ao fim
+        vetorY = ySplit.slice(meio, ySplit.length);
+
     }
+    let yVetorInt = [];
+    for (let i = 0; i < vetorY.length; i++) {
+        yVetorInt[i] = parseFloat(vetorY[i]);
+    }
+    console.log(yVetorInt);
     return yVetorInt;
 }
-
-
-
 
 function correlacao() {
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
@@ -134,7 +194,7 @@ function regressao() {
     b = mediaY - (a * mediaX);
     b = b.toFixed(2);
     b = parseFloat(b);
-   
+
     return (a + " . X + " + b + " = Y"); //retornar esta equação de primeiro grau
 
 }
@@ -197,18 +257,16 @@ function gerarGraficoCorrelacao() {
     container.style.border = '3px solid rgb(54, 104, 221) ';
     container.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
 
-    
+
     let canvas = document.createElement('div');
     container.appendChild(canvas);
     canvas.id = 'graficoCorrelacao';
-    
+
 
 
     // Define os menores valores nos vetores
     let x1 = Math.min.apply(Math, xGrafico);
-    
     let c = regressao();
-
     let a = []
     a = c[0] + c[1] + c[2] + c[3]; //encontrando o valor de A
     a = parseFloat(a);
@@ -218,7 +276,7 @@ function gerarGraficoCorrelacao() {
     b = c[11] + c[12] + c[13] + c[14]; //encontrando o valor de B
     b = parseFloat(b);
 
-    let y1 = ((a * x1) + b); 
+    let y1 = ((a * x1) + b);
 
     // Insere X1 e Y1 ao vetor de menores pontos
     vetMenores.push(x1);
@@ -277,16 +335,6 @@ function gerarGraficoCorrelacao() {
             }
         }]
     });
-
-
-
-
-
-
-
-
 }
 
 //// Eventos
-botaocalcularCorrelacao.addEventListener("click", correlacao);
-botaocalcularCorrelacao.addEventListener("click", gerarGraficoCorrelacao);

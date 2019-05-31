@@ -60,13 +60,13 @@
                     <div class="card-body">
                         <div class="text-center">
                             <img src="media/lapis.png">
-                            <a href="user.html" data-toggle="tooltip" title="Voltar"
+                            <a href="correlacao_question.html" data-toggle="tooltip" title="Voltar"
                                 class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img
                                     class="returnoImagem" src="media/return.png" /></a>
 
                         </div>
                         <h5 class="card-title text-center">Correlacao</h5>
-                        <form id="correlacaoForm" action="" method="" name="correlacao">
+                        <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="correlacao">
                             <div class="form-group">
 
                                 <input type="text" name="x" class="form-control my-input" id="xCorrelacao"
@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="text-center ">
-                                <button id="calcularCorrelacao" type="button"
+                                <button id="calcularCorrelacao" type="submit"
                                     class=" btn btn-dark btn-block tx-tfm">Calcular</button>
                             </div>
                         </form>
