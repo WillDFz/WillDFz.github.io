@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Estatistica Descritiva</title>
+  <title>Correlacao</title>
   <link rel="icon" href="media/icon.png" type="image/gif" sizes="16x16">
-
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
   <link href="css/styleS.css" rel="stylesheet">
 </head>
-
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
     <div class="container">
@@ -27,7 +20,6 @@
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -41,32 +33,25 @@
           <li class="nav-item">
             <a class="nav-link" href="cadastre_se.html">Cadastre-se</a>
           </li>
-
         </ul>
       </div>
     </div>
   </nav>
-
   <!-- Page Content -->
   <div class="container">
-
     <!-- Heading Row -->
-
-
-    <div class="row" id="rowDescritiva">
+    <div class="row" id="">
       <div class="formulario">
         <div class="card my-5">
           <div class="card-body">
             <div class="text-center">
-
               <img src="media/lapis.png">
               <a href="correlacao_question.html" data-toggle="tooltip" title="Voltar"
                 class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img class="returnoImagem"
                   src="media/return.png" /></a>
-
             </div>
             <h5 class="card-title text-center">Correlacao</h5>
-            <form id="descriForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="descritiva">
+            <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="correlacao">
                 <div class="text-center ">
                   <h6>Importacao de arquivo(.csv)</h6>
                 </div>
@@ -119,11 +104,6 @@
   <script src="scripts/correlacao.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-  
-
-
-
 </body>
 
 </html>

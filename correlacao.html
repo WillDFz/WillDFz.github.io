@@ -8,17 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Estatistica Descritiva</title>
+    <title>Correlacao</title>
     <link rel="icon" href="media/icon.png" type="image/gif" sizes="16x16">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
     <link href="css/styleS.css" rel="stylesheet">
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
         <div class="container">
@@ -28,7 +26,6 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -42,19 +39,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="cadastre_se.html">Cadastre-se</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Page Content -->
     <div id="principalCorrelacao" class="container">
-
         <!-- Heading Row -->
-
-
-        <div class="row" id="rowDescritiva">
+        <div class="row" id="">
             <div class="formulario">
                 <div class="card my-5">
                     <div class="card-body">
@@ -63,12 +55,11 @@
                             <a href="correlacao_question.html" data-toggle="tooltip" title="Voltar"
                                 class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img
                                     class="returnoImagem" src="media/return.png" /></a>
-
                         </div>
                         <h5 class="card-title text-center">Correlacao</h5>
-                        <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="correlacao">
+                        <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method=""
+                            name="correlacao">
                             <div class="form-group">
-
                                 <input type="text" name="x" class="form-control my-input" id="xCorrelacao"
                                     placeholder="(X) Digite os dados separados por ';'" required>
                             </div>
@@ -77,7 +68,6 @@
                                 <input type="text" name="y" class="form-control my-input" id="yCorrelacao"
                                     placeholder="(Y) Digite os dados separados por ';'" required>
                             </div>
-
                             <div class="text-center ">
                                 <button id="calcularCorrelacao" type="submit"
                                     class=" btn btn-dark btn-block tx-tfm">Calcular</button>
@@ -89,11 +79,7 @@
         </div>
         <!-- /.row -->
         <!-- Container do grafico -->
-
         <div id="containerGrafico">
-
-
-
         </div>
     </div>
     </div>
