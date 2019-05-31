@@ -522,7 +522,7 @@ function operacaoNormal() {
 
         let campo = document.getElementById('rowDadosProbabilidade');
         let quadro = document.createElement('table');
-        quadro.classList.add("table", "table-bordered", "table-striped", "quadroProbNormal");
+        quadro.classList.add("table", "table-dark", "table-bordered", "quadroProbNormal");
 
         campo.appendChild(quadro);
 
@@ -535,9 +535,13 @@ function operacaoNormal() {
         let cabec = document.createElement('th');
         cabecalho.appendChild(cabec);
         cabec.innerText = "Resultado";
+        // Cria corpo da tabela
+        let tableBody = document.createElement('tbody');
+        tableBody.classList.add("table-striped");
+        quadro.appendChild(tableBody);
         // Criando cedula da tabela
         let celula = document.createElement('td');
-        quadro.appendChild(celula);
+        tableBody.appendChild(celula);
 
 
         switch (indexNormalList) {

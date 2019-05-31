@@ -46,19 +46,15 @@
           <div class="card-body">
             <div class="text-center">
               <img src="media/lapis.png">
-              <a href="descritiva_question.html" data-toggle="tooltip" title="Voltar"
+              <a href="correlacao_question.html" data-toggle="tooltip" title="Voltar"
                 class="returnoBtn btn-light btn tx-tfm" role="button" aria-pressed="true"><img class="returnoImagem"
                   src="media/return.png" /></a>
             </div>
             <h5 class="card-title text-center">Estatistica Descritiva</h5>
-            <form id="descriForm" action="javascript:tabelaTipo();" method="" name="descritiva">
+            <form id="descriForm" action="javascript:tabelaTipo()" method="" name="descritiva">
               <div class="form-group">
                 <input type="text" name="variavel" class="form-control my-input" id="variaveis"
                   placeholder="Nome da Variavel" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="dados" class="form-control my-input" id="dados"
-                  placeholder="Digite os dados separados por ';'" required>
               </div>
               <div class="form-check">
                 <div class="radio">
@@ -67,7 +63,6 @@
                 <div class="radio">
                   <label><input id="amostra" type="radio" name="optradio"> Amostra</label>
                 </div>
-                <hr class="my-4">
                 <label>Medidas Separatrizes:</label>
                 <div class="form-group">
                   <select id="separatrizes" class="form-group">
@@ -79,10 +74,19 @@
                   <input id="separatrizNumberInput" type="number" name="medidaNum" class="form-control my-input"
                     placeholder="">
                 </div>
-              </div>
-              <div class="text-center ">
-                <button id="calcular" type="submit" class=" btn btn-dark btn-block tx-tfm">Calcular</button>
-              </div>
+                <hr class="my-4">
+                <div class="text-center ">
+                  <h6>Importacao de arquivo(.csv)</h6>
+                </div>
+                <div class="form-group text-center">
+                  <div class="">
+                    <input type="file" onchange="getCSV(this)" class="" id="">
+                  </div>
+                </div>
+                <hr class="my-4">
+                <div class="text-center">
+                  <button class="btn btn-dark" type="submit">Importar</button>
+                </div>
             </form>
           </div>
         </div>
@@ -113,5 +117,4 @@
   <script src="scripts/tabela.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </body>
-
 </html>

@@ -1,6 +1,4 @@
 'use strict'
-// Botao Calcular
-let botaoCalcular = document.getElementById("calcular");
 
 var crow = [];
 // Flag Tabela
@@ -9,15 +7,18 @@ var flag = false;
 var flagQ = false;
 // Flag Grafico
 var flagG = false;
+
 ///////////////   Funcoes de importacao ////////////////////////////////////
 function getCSV(file) {
     let reader = new FileReader();
     let arquivoSelecionado = file.files[0];
     reader.readAsText(arquivoSelecionado);
     reader.onload = function () {
+        console.log(reader.result);
         crow = reader.result;
     }
 }
+
 //////////////////////////////////////////////////////
 // Pega  o nome da Variavel
 function getFormVariavel() {
@@ -32,14 +33,14 @@ function getFormValor() {
         let form = document.getElementById("descriForm");
         valor = form.dados.value;
     } else {
-        valor = crow;  
+        valor = crow;
     }
     return valor;
 }
 // Funcao para usar separador e transformar string em array
 function quebraString() {
     // Retirar espacos
-    let valor = getFormValor().replace(/\s+/g, '');
+    let valor = getFormValor();
     // Separa os elementos da String por ; e injeta no vetor
     let vetorStr = valor.split(";");
     // Cria um vetor vazio para ser preenchido com numeros inteiros
@@ -73,6 +74,7 @@ function mediaDiscreta() {
     let media = (acm / vet.length).toFixed(2);
     return media;
 }
+
 function mediaContinua() {
 
     let fi = acmContinua(quebraString());
@@ -189,16 +191,27 @@ function medianaContinua() {
             }
         }
     }
+
+
+
+
     retornoMedianaContinua = limiteInf + (((resultado - facmAnterior) / fSimples) * intervalos);
     return retornoMedianaContinua.toFixed(2);
+
+
+
 }
+
 function modaContinua() {
     /// Definindo range entre as variaveis
     let range = rangeClasses(quebraString());
     // Intervalo entre variaveis
     let intervalos = range[0];
+
     let maior = 0;
     let vetorFreqclasses = acmContinua(quebraString());
+
+
     for (let i = 0; i < vetorFreqclasses.length; i++) {
         if (vetorFreqclasses[i] > maior) {
             maior = vetorFreqclasses[i];
@@ -207,10 +220,15 @@ function modaContinua() {
     let indexMaior = vetorFreqclasses.indexOf(maior);
     let celula = document.querySelector(".range" + indexMaior).innerText;
     let vetorPronto = celula.split("|-- ");
+
     let soma = (parseFloat(vetorPronto[0]) + parseFloat(vetorPronto[1]));
+
     let media = soma / 2;
+
     return media;
 }
+
+
 function moda() {
     // Chama o vetor principal
     let vet = quebraString();
@@ -240,6 +258,8 @@ function moda() {
     }
     return modaVet;
 }
+
+
 function tabelaTipo() {
     // Chama o vetor principal
     let vet = quebraString();
@@ -1300,6 +1320,3 @@ function gerarGraficoContinua() {
         gerarGraficoContinua();
     }
 }
-
-///////////////////////////////////////////////////
-
