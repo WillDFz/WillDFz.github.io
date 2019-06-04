@@ -967,11 +967,11 @@ function quadroDados() {
         cabecalho.appendChild(cabec5);
         cabecalho.appendChild(cabec6);
         // Ajustando o conteúdo das células do cabeçalho
-        cabec1.innerText = 'Media';
+        cabec1.innerText = 'Média';
         cabec2.innerText = 'Moda';
         cabec3.innerText = 'Mediana';
-        cabec4.innerText = 'Desvio Padrao';
-        cabec5.innerText = 'Coeficiente de Variacao';
+        cabec4.innerText = 'Desvio Padrão';
+        cabec5.innerText = 'Coeficiente de Variação';
         cabec6.innerText = 'Medida Separatriz';
         // Fim cabecalho
         let vet = quebraString();
@@ -1045,11 +1045,11 @@ function quadroDadosContinua() {
         cabecalho.appendChild(cabec5);
         cabecalho.appendChild(cabec6);
         // Ajustando o conteúdo das células do cabeçalho
-        cabec1.innerText = 'Media';
+        cabec1.innerText = 'Média';
         cabec2.innerText = 'Moda';
         cabec3.innerText = 'Mediana';
         cabec4.innerText = 'Desvio Padrao';
-        cabec5.innerText = 'Coeficiente de Variacao';
+        cabec5.innerText = 'Coeficiente de Variação';
         cabec6.innerText = 'Medida Separatriz';
         // Fim cabecalho
         let vet = quebraString();
