@@ -128,10 +128,6 @@ function correlacao() {
         somatoriaYQuadrado += vetYQuadrado[i];
         somatoriaMultXY += vetMultXY[i];
     }
-
-
-
-
     let aux1 = (amostra * somatoriaMultXY) - (somatoriaX * somatoriaY);
 
     let aux2 = ((amostra * somatoriaXQuadrado) - (somatoriaX * somatoriaX)) * ((amostra * somatoriaYQuadrado) - (somatoriaY * somatoriaY));
@@ -238,13 +234,9 @@ function juncaoXY() {
     // preenche vetor com elementos intercalados para o grafico
     for (let i = 0; i < x.length; i++) {
         vetorXY[i] = (([x[i], y[i]]));
-
-
     }
     return vetorXY;
 }
-
-
 
 function gerarGraficoCorrelacao() {
     let xGrafico = getXCorrelacao();
@@ -257,12 +249,55 @@ function gerarGraficoCorrelacao() {
     container.style.border = '3px solid rgb(54, 104, 221) ';
     container.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
 
-
+    // Cria Canvas
     let canvas = document.createElement('div');
     container.appendChild(canvas);
     canvas.id = 'graficoCorrelacao';
 
+    if (flagElementoCorrelacao == false) {
+        flagElementoCorrelacao = true;
+        // Cria tabela e inpt '
+        let dadosCorrelacao = document.getElementById('dadosCorrelacao');
 
+        // Cria tabela
+        let tabela = document.createElement('table');
+        tabela.classList.add("table", "table-dark", "table-bordered", "table-striped", "quadroDadosCorrelacao");
+        dadosCorrelacao.appendChild(tabela);
+        // Criando a linha de cabeçalho da tabela
+        let cabecalho = document.createElement('thead');
+        cabecalho.classList.add('thead-light');
+        // Posicionando a linha do cabeçalho
+        tabela.appendChild(cabecalho);
+        // Criando as células do cabeçalho'
+        let cabec1 = document.createElement('th');
+        let cabec2 = document.createElement('th');
+        cabec1.innerText = "Correlacao de:";
+        cabec2.innerText = "Equacao:";
+        // Posicionando as células de cabeçalho
+        cabecalho.appendChild(cabec1);
+        cabecalho.appendChild(cabec2);
+
+        let tableBody = document.createElement('tbody');
+        tableBody.classList.add("table-striped");
+        tabela.appendChild(tableBody);
+        // Declata linha
+        let tabelaLinha = document.createElement('tr');
+        tableBody.appendChild(tabelaLinha);
+
+        let celula1 = document.createElement('td');
+        let celula2 = document.createElement('td');
+        celula1.innerText = regressao();
+        celula2.innerText = correlacao();
+
+        tabelaLinha.appendChild(celula1);
+        tabelaLinha.appendChild(celula2);
+
+    } else {
+        document.querySelector(".quadroDadosCorrelacao").remove();
+
+        flagElementoCorrelacao = false;
+        gerarGraficoCorrelacao();
+    }
 
     // Define os menores valores nos vetores
     let x1 = Math.min.apply(Math, xGrafico);

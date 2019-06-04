@@ -1,7 +1,7 @@
  body,
  html {
-	 height: 100%;
-	 
+ 	height: 100%;
+
  }
 
  body {
@@ -78,8 +78,9 @@
  	padding: 0;
 
  }
- .uploadBtn{
-	font-size: 90%;
+
+ .uploadBtn {
+ 	font-size: 90%;
  }
 
  .returnoImagem {
@@ -103,14 +104,14 @@
  }*/
 
  .botoes-grupo {
-	width: 80%;
-    padding: 10px;
-    text-align: center;
-    background-image: linear-gradient(to right, rgb(0, 35, 111), rgb(54, 104, 221));
-    opacity: 0.95;
-    border-radius: 5px;
-	margin: auto;
-	box-shadow: 0 0 50px -5px rgb(9, 25, 255);
+ 	width: 80%;
+ 	padding: 10px;
+ 	text-align: center;
+ 	background-image: linear-gradient(to right, rgb(0, 35, 111), rgb(54, 104, 221));
+ 	opacity: 0.95;
+ 	border-radius: 5px;
+ 	margin: auto;
+ 	box-shadow: 0 0 50px -5px rgb(9, 25, 255);
  }
 
  .figuras {
@@ -157,9 +158,11 @@
 
  	margin: auto;
  }
- .resetCenter{
-	 flex-direction: inherit;
+
+ .resetCenter {
+ 	flex-direction: inherit;
  }
+
  .quadroProbUniforme {
  	position: relative;
 
@@ -183,28 +186,43 @@
  	margin: 0 auto;
  	padding-bottom: 15%;
  }
- #myFile{
-	 width: 90%;
+
+ .quadroDadosCorrelacao {
+ 	position: relative;
+ 	width: 80%;
+ 	margin: auto;
+
  }
+
+ #myFile {
+ 	width: 90%;
+ }
+
  #nome {
  	color: #fff;
  	font-size: 200%;
  	text-shadow: 0 0 3px #48a0dc;
  }
- #passReset{
-	color: #000;
-	font-weight: bold;
- }
- #graficoContainer{
-	 width: 90%;
+
+ #passReset {
+ 	color: #000;
+ 	font-weight: bold;
  }
 
- #graficoDescritiva{
-	width: 90%;
+ #graficoContainer {
+ 	width: 90%;
  }
- #containerGrafico{
-	 box-sizing: content-box;
+
+ #graficoDescritiva {
+ 	width: 90%;
  }
+
+ #containerGrafico {
+	
+	box-sizing: content-box;
+	
+ }
+
  #rowDados {
  	padding-bottom: 15%;
  }
@@ -329,7 +347,7 @@
  	float: right;
  }
 
- #calcularUniforme {}
+
 
  #calcularBinomial {
  	display: none;
@@ -371,17 +389,26 @@
 
  	.quadroProbNormal {
  		width: 450px;
-	 }
-	 #passResetForm{
-		width: 335px;
-		height: 315px;
+ 	}
 
-	}
-	#innerFormReset{
-		width: 100%;
-		position: relative;
+ 	.quadroDadosCorrelacao {
+ 		position: relative;
+ 		width: 350px;
+ 		margin: auto;
 
-	}
+ 	}
+
+ 	#passResetForm {
+ 		width: 335px;
+ 		height: 315px;
+
+ 	}
+
+ 	#innerFormReset {
+ 		width: 100%;
+ 		position: relative;
+
+ 	}
  }
 
  @media(min-width: 992px) {
