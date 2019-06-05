@@ -141,12 +141,11 @@
  .tabela-principal {
  	width: 95%;
  	margin-right: auto;
- 	margin-left: auto;
+	 margin-left: auto;
+	 text-align: center;
  }
 
- .tabela1 {
- 	text-align: center;
- }
+
 
  .push {
  	margin-bottom: 50px;
@@ -224,11 +223,13 @@
  }
 
  #graficoContainer {
- 	width: 90%;
+	 width: 90%;
+	 margin: auto;
  }
 
  #graficoDescritiva {
- 	width: 90%;
+	 width: 90%;
+	 margin: auto;
  }
 
  #containerGrafico {
