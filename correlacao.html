@@ -46,7 +46,7 @@
     <!-- Page Content -->
     <div id="principalCorrelacao" class="container">
         <!-- Heading Row -->
-        <div class="row" >
+        <div class="row">
             <div class="formulario">
                 <div class="card my-5">
                     <div class="card-body">
@@ -68,6 +68,15 @@
                                 <input type="text" name="y" class="form-control my-input" id="yCorrelacao"
                                     placeholder="(Y) Digite os dados separados por ';'" required>
                             </div>
+                            <hr class="my-4">
+                            <label>Projeções:</label>
+                            <div class="form-group" id="alteraveis">
+                                
+                                <input type="number" name="xAlteravel" class="form-control my-input" id="xAlteravel" placeholder="(X)" onchange="regressaoAlteravel(this.value, 'x')">
+                                <input type="number" name="yAlteravel" class="form-control my-input" id="yAlteravel" placeholder="(Y)" onchange="regressaoAlteravel(this.value, 'y')">
+
+
+                            </div>
                             <div class="text-center ">
                                 <button id="calcularCorrelacao" type="submit"
                                     class=" btn btn-dark btn-block tx-tfm">Calcular</button>
@@ -78,13 +87,14 @@
             </div>
         </div>
         <!-- /.row -->
-        <div class="row" id="dadosCorrelacao">
-        </div>
-        <!-- Container do grafico -->
-        <div id="containerGrafico">
-        </div>
+
     </div>
-    
+    <div class="row" id="dadosCorrelacao">
+    </div>
+    <!-- Container do grafico -->
+    <div id="containerGrafico">
+    </div>
+
     <!-- /.container -->
     <div class="row my-5">
     </div>

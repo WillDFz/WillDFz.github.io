@@ -190,12 +190,26 @@
  .quadroDadosCorrelacao {
  	position: relative;
  	width: 80%;
- 	margin: auto;
-
+ 	margin: auto auto 20px auto;
  }
 
  #myFile {
  	width: 90%;
+ }
+
+
+ #alteraveis {
+ 	display: inline-flex;
+ }
+
+ #xAlteravel {
+ 	width: 45%;
+ 	margin: auto;
+ }
+
+ #yAlteravel {
+ 	width: 45%;
+ 	margin: auto;
  }
 
  #nome {
@@ -218,9 +232,10 @@
  }
 
  #containerGrafico {
-	
-	box-sizing: content-box;
-	
+	width: 90%;
+	margin: auto;
+ 	box-sizing: content-box;
+
  }
 
  #rowDados {
@@ -394,7 +409,7 @@
  	.quadroDadosCorrelacao {
  		position: relative;
  		width: 350px;
- 		margin: auto;
+
 
  	}
 

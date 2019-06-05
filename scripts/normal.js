@@ -414,12 +414,8 @@ function encontraElemento(media, dp, valor) {
             break;
         default:
             return 0.5000;
-
     }
-
-
 }
-
 ///////////////// FUNÇÃO QUE RECEBE O VALOR ENCONTRADO E TRATA AS POSSIBILIDADES DE MAIOR QUE, RETORNANDO O RESULTADO FINAL
 function maiorQueDistNormal() {
     let media = getMedia();

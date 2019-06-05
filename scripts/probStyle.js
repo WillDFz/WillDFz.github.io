@@ -54,19 +54,19 @@ let calcularNormal = document.getElementById("calcularNormal");
 
 function selecaoUniforme() {
     selecionaCondicao();
-    
+
     document.querySelector('.table').remove();
 }
 
 function selecaoBinomial() {
     selecionaCondicaoBinomial();
-    
+
     document.querySelector('.table').remove();
 }
 
 function selecaoNormal() {
     selecionaCondicaoNormal();
-    
+
     document.querySelector('.table').remove();
 
 }
@@ -101,39 +101,35 @@ function selecionaCondicao() {
             entreForm.style.display = "none";
 
             minMaxForm.style.marginBottom = "0";
-
             tamanhoN.style.display = "none";
-            
-
-
             break;
         case 1:
             // Entre 
             quantidade.style.display = "none";
             entreForm.style.display = "inline-block";
 
-            
+
             break;
         case 2:
             //Menor que
             quantidade.style.display = "inline-block";
             minMaxForm.style.display = "inline-block";
             entreForm.style.display = "none";
-            
+
             break;
         case 3:
             //Desvio e Variacao
             quantidade.style.display = "none";
             entreForm.style.display = "none";
             minMaxForm.style.display = "inline-block";
-            
+
             break;
         case 4:
             // Valor Medio
             quantidade.style.display = "none";
             entreForm.style.display = "none";
             minMaxForm.style.display = "inline-block";
-            
+
             break;
         default:
             break;
@@ -178,7 +174,7 @@ function selecionaCondicaoBinomial() {
             binomialForm2.style.width = "100%";
             evento.style.display = "inline-block";
             evento.style.width = "100%";
-            
+
             break;
         case 1:
             // Media
@@ -192,7 +188,7 @@ function selecionaCondicaoBinomial() {
             binomialForm1.style.width = "100%";
             binomialForm1.style.margin = "0";
             sucesso.style.width = "100%";
-            
+
             break;
         case 2:
             // Desvio Padrao
@@ -208,7 +204,7 @@ function selecionaCondicaoBinomial() {
 
             binomialForm2.style.display = "none";
 
-            
+
             break;
         default:
             break;
@@ -251,13 +247,13 @@ function selecionaCondicaoNormal() {
             entreForm.style.display = "none";
 
             minMaxForm.style.marginBottom = "0";
-            
+
             break;
         case 1:
             // Entre
             entreForm.style.display = "inline-block";
             quantidade.style.display = "none";
-            
+
             break;
         case 2:
             // Menor que
@@ -267,7 +263,7 @@ function selecionaCondicaoNormal() {
             entreForm.style.display = "none";
 
             minMaxForm.style.marginBottom = "0";
-            
+
             break;
         default:
             break;

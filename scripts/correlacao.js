@@ -2,6 +2,10 @@
 
 // Formulario
 let formCorrelacao = document.getElementById("correlacaoForm");
+// X alteravel 
+let xAlteravel = document.getElementById("xAlteravel");
+// Y alteravel
+let yAlteravel = document.getElementById("yAlteravel");
 // Botao Calcular
 let botaocalcularCorrelacao = document.getElementById("calcularCorrelacao");
 // Flag pra deletar elemento
@@ -200,7 +204,7 @@ function regressao() {
 
 function regressaoAlteravel(valor, valorParametro) {
     let resultado = 0;
-    let regressaoValores = regressao() //chamando o valor retornado da função regressão
+    let regressaoValores = regressao(); //chamando o valor retornado da função regressão
     let quebraString = (regressaoValores + "").split(""); //quebrando o string 
 
 
@@ -271,8 +275,8 @@ function gerarGraficoCorrelacao() {
         // Criando as células do cabeçalho'
         let cabec1 = document.createElement('th');
         let cabec2 = document.createElement('th');
-        cabec1.innerText = "Correlacao de:";
-        cabec2.innerText = "Equacao:";
+        cabec1.innerText = "Correlação de:";
+        cabec2.innerText = "Equação:";
         // Posicionando as células de cabeçalho
         cabecalho.appendChild(cabec1);
         cabecalho.appendChild(cabec2);
@@ -294,7 +298,6 @@ function gerarGraficoCorrelacao() {
 
     } else {
         document.querySelector(".quadroDadosCorrelacao").remove();
-
         flagElementoCorrelacao = false;
         gerarGraficoCorrelacao();
     }
@@ -339,7 +342,7 @@ function gerarGraficoCorrelacao() {
             min: 0
         },
         title: {
-            text: 'Grafico de Dispersao'
+            text: 'Grafico de Dispersão'
         },
         subtitle: {
             text: 'Correlacao entre: ' + xGrafico + ' x ' + yGrafico
@@ -347,7 +350,7 @@ function gerarGraficoCorrelacao() {
         series: [{
             regression: true,
             type: 'line',
-            name: 'Linha de Regressao',
+            name: 'Linha de Regressão',
             data: [vetMaiores, vetMenores
 
             ],
@@ -373,3 +376,5 @@ function gerarGraficoCorrelacao() {
 }
 
 //// Eventos
+//xAlteravel.addEventListener("change", regressaoAlteravel(this.value, "x" );
+//yAlteravel.addEventListener("change", regressaoAlteravel(valor, "y");
