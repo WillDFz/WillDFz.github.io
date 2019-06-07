@@ -247,7 +247,10 @@ function tabelaTipo() {
     let vetorTratado = contador(vet);
     // Chama Vetor de Valores
     let valores = vetorTratado[0];
-    if (valores.length <= 6) {
+    if (isNaN(valores[0]) && isNaN(valores[2])){
+        return tabelaGenerica(), quadroDados(), gerarGraficoQualitativa();
+    }
+    else if  (valores.length <= 6) {
         return tabelaGenerica(), quadroDados(), gerarGraficoDiscritiva();
     } else {
         return tabelaDeClasses(), quadroDadosContinua(), gerarGraficoContinua();
@@ -1300,6 +1303,85 @@ function gerarGraficoContinua() {
         gerarGraficoContinua();
     }
 }
+//Grafico Qualitativa
+function gerarGraficoQualitativa() {
+    if (flagG == false) {
+        flagG = true;
+        let container = document.getElementById('graficoContainer');
+        let canvas1 = document.createElement('canvas');
+        container.appendChild(canvas1)
+        canvas1.id = 'graficoQualitativa';
+
+        var ctx = canvas1.getContext('2d');
+       
+        
+        // Chama o vetor principal
+        let vet = quebraString();
+        // Diferenciando os vetores de Valor e Repeticao com contador(vet)
+        let vetorTratado = contador(vet);
+        // Valores
+        let valores = vetorTratado[0];
+        // Chama Vetor de Repeticao
+        let repeticoes = vetorTratado[1];
+        // Vetor de Porcentagem
+        let vetorPercent = [];
+
+
+        for (let i = 0; i < repeticoes.length; i++) {
+            vetorPercent[i] = fiPercent(repeticoes[i], vet);
+
+
+        }
+        var myBarChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: valores,
+                datasets: [{
+                    label: 'Frequencia %',
+                    data: vetorPercent,
+                    backgroundColor: ['rgba(72, 61, 139, 1)',
+
+                        'rgba(0, 0, 255, 1)',
+
+                        'rgba(54, 162, 235, 1)',
+
+                        'rgba(75, 192, 192, 1)',
+
+                        'rgba(25, 25, 112, 1)',
+
+                        'rgba(100, 149, 237, 1)',
+
+                        'rgba(0, 250, 154, 1)',
+
+                        'rgba(148, 0, 211, 1)',
+
+                        'rgba(153, 102, 255, 1)',
+
+                        'rgba(47, 79, 79, 1)',
+
+                        'rgba(119, 136, 153, 1)'
+                    ]
+                }]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: '#fff'
+                    }
+                },
+                
+            }
+        });
+    } else {
+        document.getElementById("graficoQualitativa").remove();
+        flagG = false;
+        gerarGraficoQualitativa();
+    }
+}
+
+
+
+
 
 ///////////////////////////////////////////////////
 
