@@ -13,12 +13,12 @@ Este é um repositório para a prototipação do Blue Statistics: Software de Es
 
 O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operações básicas de estatística. 
 
-# Pré Requisitos
+## Pré Requisitos
 Para execução do sistema, é necessária conexão com a internet e instalação de um dos seguintes navegadores:
 Google Chrome (versão 58 ou superior), Mozilla Firefox (versão 54 ou superior) ou Microsoft Edge (versão 14 ou superior). 
 O sistema não precisa ser instalado para ser executado.
 
-# Como utilizar o sistema
+## Como utilizar o sistema
 Na tela inicial, o usuário pode optar entre entrar no sistema (login ou como convidado) e cadastrar-se.
 Após entrar no sistema, o usuário pode escolher entre as três opções de operações do sistema:
 estatística descritiva, probabilidade ou correlação e regressão. (estatística descritiva e correlação e regressão aceitam
@@ -32,7 +32,7 @@ A correlação e regressão pede obrigatoriamente a inserção de dois vetores d
 serão: Gráfico, coeficiente de variação e coeficiente da reta. Após a exibição dos dados, o usuário pode optar por fazer
 uma projeção utilizando o coeficiente da reta.
 
-# Ferramentas utilizadas
+## Ferramentas utilizadas
 Microsoft Visual Studio Code
 
 Bootstrap 
