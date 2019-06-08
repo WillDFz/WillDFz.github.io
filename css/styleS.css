@@ -141,8 +141,8 @@
  .tabela-principal {
  	width: 95%;
  	margin-right: auto;
-	 margin-left: auto;
-	 text-align: center;
+ 	margin-left: auto;
+ 	text-align: center;
  }
 
 
@@ -158,6 +158,14 @@
  	margin: auto;
  }
 
+ .quadroProjecao {
+ 	position: relative;
+ 	width: 80%;
+
+ 	margin: auto auto 20px auto;
+
+ }
+
  .resetCenter {
  	flex-direction: inherit;
  }
@@ -169,6 +177,8 @@
  	margin: 0 auto;
  	padding-bottom: 15%;
  }
+
+
 
  .quadroProbBinomial {
  	position: relative;
@@ -223,18 +233,18 @@
  }
 
  #graficoContainer {
-	 width: 90%;
-	 margin: auto;
+ 	width: 90%;
+ 	margin: auto;
  }
 
  #graficoDescritiva {
-	 width: 90%;
-	 margin: auto;
+ 	width: 90%;
+ 	margin: auto;
  }
 
  #containerGrafico {
-	width: 90%;
-	margin: auto;
+ 	width: 90%;
+ 	margin: auto;
  	box-sizing: content-box;
 
  }
@@ -410,8 +420,11 @@
  	.quadroDadosCorrelacao {
  		position: relative;
  		width: 350px;
+ 	}
 
-
+ 	.quadroProjecao {
+ 		position: relative;
+ 		width: 350px;
  	}
 
  	#passResetForm {

@@ -2,14 +2,12 @@
 
 // Formulario
 let formCorrelacao = document.getElementById("correlacaoForm");
-// X alteravel 
-let xAlteravel = document.getElementById("xAlteravel");
-// Y alteravel
-let yAlteravel = document.getElementById("yAlteravel");
 // Botao Calcular
 let botaocalcularCorrelacao = document.getElementById("calcularCorrelacao");
 // Flag pra deletar elemento
 let flagElementoCorrelacao = false;
+// Flag projecao
+let flagProjecao = false;
 
 var crowCorrelacao = [];
 var crowX = [];
@@ -105,6 +103,9 @@ function getYCorrelacao() {
     console.log(yVetorInt);
     return yVetorInt;
 }
+
+
+
 
 function correlacao() {
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
@@ -212,23 +213,34 @@ function regressaoAlteravel(valor, valorParametro) {
     a = quebraString[0] + quebraString[1] + quebraString[2] + quebraString[3]; //encontrando o valor de A
     a = parseFloat(a);
 
-
     let b = []
     b = quebraString[11] + quebraString[12] + quebraString[13] + quebraString[14]; //encontrando o valor de B
     b = parseFloat(b);
 
-
     if (valorParametro == "x") { //se o valor que o usuário deu é o valor de X:
+        // Y reset
+        let yAlteravel = document.getElementById("yAlteravel");
+        yAlteravel.value = "";
+
+
         resultado = (a * valor) + b;
         resultado = resultado.toFixed(2);
         resultado = parseFloat(resultado);
-        return "Se x vale " + valor + ", y é igual a: " + resultado;
+        console.log("Se x vale " + valor + ", y é igual a: " + resultado);
+        gerarTabelaProjecao("Se x vale " + valor + ", y é igual a: " + resultado);
     } else if (valorParametro == "y") { ////se o valor que o usuário deu é o valor de Y:
+        // X reset
+        let xAlteravel = document.getElementById("xAlteravel");
+        xAlteravel.value = "";
+
         resultado = (valor - b) / a;
         resultado = resultado.toFixed(2);
         resultado = parseFloat(resultado);
-        return "Se y vale " + valor + ", x é igual a: " + resultado;
+        console.log("Se y vale " + valor + ", x é igual a: " + resultado);
+        gerarTabelaProjecao("Se y vale " + valor + ", x é igual a: " + resultado);
     }
+    a = null;
+    b = null;
 }
 
 function juncaoXY() {
@@ -375,6 +387,40 @@ function gerarGraficoCorrelacao() {
     });
 }
 
+function gerarTabelaProjecao(resultado){
+    if (flagProjecao == false) {
+        flagProjecao = true;
+        // Cria tabela e inpt '
+        let quadroDeDados = document.getElementById('quadroDeDados');
+        // Cria tabela
+        let tabela = document.createElement('table');
+        tabela.classList.add("table", "table-dark", "table-bordered", "table-striped", "quadroProjecao");
+        quadroDeDados.appendChild(tabela);
+        // Criando a linha de cabeçalho da tabela
+        let cabecalho = document.createElement('thead');
+        cabecalho.classList.add('thead-light');
+        // Posicionando a linha do cabeçalho
+        tabela.appendChild(cabecalho);
+        // Criando as células do cabeçalho'
+        let cabec1 = document.createElement('th');
+        cabec1.innerText = "Resultado da projecao:";
+        // Posicionando as células de cabeçalho
+        cabecalho.appendChild(cabec1);
+        let tableBody = document.createElement('tbody');
+        tableBody.classList.add("table-striped");
+        tabela.appendChild(tableBody);
+        // Declata linha
+        let tabelaLinha = document.createElement('tr');
+        tableBody.appendChild(tabelaLinha);
+        let celula1 = document.createElement('td');
+        celula1.innerText = resultado;
+        tabelaLinha.appendChild(celula1);
+    } else {
+        document.querySelector(".quadroProjecao").remove();
+        flagProjecao = false;
+        gerarTabelaProjecao(resultado);
+    }
+}
 //// Eventos
 //xAlteravel.addEventListener("change", regressaoAlteravel(this.value, "x" );
 //yAlteravel.addEventListener("change", regressaoAlteravel(valor, "y");

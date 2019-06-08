@@ -71,12 +71,14 @@
                             <hr class="my-4">
                             <label>Projeções:</label>
                             <div class="form-group" id="alteraveis">
-                                
-                                <input type="number" name="xAlteravel" class="form-control my-input" id="xAlteravel" placeholder="(X)" onchange="regressaoAlteravel(this.value, 'x')">
-                                <input type="number" name="yAlteravel" class="form-control my-input" id="yAlteravel" placeholder="(Y)" onchange="regressaoAlteravel(this.value, 'y')">
 
+                                <input type="number" name="xAlteravel" class="form-control my-input" id="xAlteravel"
+                                    placeholder="(X)" onchange="regressaoAlteravel(this.value, 'x')">
+                                <input type="number" name="yAlteravel" class="form-control my-input" id="yAlteravel"
+                                    placeholder="(Y)" onchange="regressaoAlteravel(this.value, 'y')">
 
                             </div>
+                            <hr class="my-4">
                             <div class="text-center ">
                                 <button id="calcularCorrelacao" type="submit"
                                     class=" btn btn-dark btn-block tx-tfm">Calcular</button>
@@ -89,6 +91,7 @@
         <!-- /.row -->
 
     </div>
+    <div id="quadroDeDados" class="row"></div>
     <div class="row" id="dadosCorrelacao">
     </div>
     <!-- Container do grafico -->
