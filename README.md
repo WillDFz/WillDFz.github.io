@@ -1,4 +1,5 @@
 # Blue Statistics	
+
 [Blue Statistics](http://https://willdfz.github.io "Blue Statistics") é um software voltado para a realização de cálculos relacionados à estatística aplicada,
 que engloba estatística descritiva, probabilidade, correlação e regressão. 
 
@@ -53,8 +54,11 @@ Discord
 
 ## Autores
 Bianca Junia de Castro Gomes
+
 [Danilo Matias Martins](http://https://github.com/DaniloMatias "Danilo Matias Martins")
+
 Vinicius Henrique César
+
 [William Dourado Ferreira](http://https://github.com/WillDFz "William Dourado Ferreira")
 
 ## Colaboradores
