@@ -208,7 +208,10 @@
 
 
  #alteraveis {
- 	display: inline-flex;
+ 	display: none;
+ }
+ #alteraveisLabel{
+	display: none;
  }
 
  #xAlteravel {
