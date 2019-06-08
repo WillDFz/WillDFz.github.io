@@ -37,19 +37,32 @@ uma projeção utilizando o coeficiente da reta.
 
 # Ferramentas utilizadas
 VS code
+
 Bootstrap 
+
 HTML5
+
 JavaScript
 Bizagi
+
 Astah
+
 Storyboard That
+
 MS Oficce
+
 Magic Vector 
+
 Adobe Photoshop CC
+
 Git/GitHub
+
 StackOverflow
+
 ChartJs
+
 Highcharts
+
 Discord
 
 ## Autores
