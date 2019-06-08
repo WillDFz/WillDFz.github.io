@@ -35,20 +35,23 @@ serão: Gráfico, coeficiente de variação e coeficiente da reta. Após a exibi
 uma projeção utilizando o coeficiente da reta.
 
 # Ferramentas utilizadas
-VS code
+Microsoft Visual Studio Code
 
 Bootstrap 
 
 HTML5
 
-JavaScript
+CSS3
+
+JavaScript (ECMAScript 6)
+
 Bizagi
 
 Astah
 
 Storyboard That
 
-MS Oficce
+Microsoft Oficce
 
 Magic Vector 
 
