@@ -122,6 +122,10 @@ function correlacao() {
     let amostra = vetX.length; //tamanho da amostra = nº de variáveis pesquisadas
     let r = 0 //resultado da fórmula
 
+    let alteraveisField = document.getElementById('alteraveis');
+    let alteraveisLabel = document.getElementById('alteraveisLabel');
+    alteraveisField.style.display = 'inline-flex';
+    alteraveisLabel.style.display = 'block';
 
     for (let i = 0; i < vetX.length; i++) {
         vetXQuadrado[i] = vetX[i] * vetX[i];
