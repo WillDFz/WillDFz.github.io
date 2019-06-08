@@ -9,7 +9,7 @@ que engloba estatística descritiva, probabilidade, correlação e regressão.
 
 Este e um repositorio para a prototipacao do Blue Statistics: Software de Estatistica desenvolvido para avaliacao no 3 ciclo do curso de Anaise e Desenvolvimento de Sistemas - Fatec Franca - 2019.
 
-# MVP
+## MVP
 
 O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operacoes basicas de estatistica. 
 
@@ -35,30 +35,30 @@ serão: Gráfico, coeficiente de variação e coeficiente da reta. Após a exibi
 uma projeção utilizando o coeficiente da reta.
 
 # Ferramentas utilizadas
-#####VS code
-#####Bootstrap 
-#####HTML5
-#####JavaScript
-#####Bizagi
-#####Astah
-#####Storyboard That
-#####MS Oficce
-#####Magic Vector 
-#####Adobe Photoshop CC
-#####Git/GitHub
-#####StackOverflow
-#####ChartJs
-#####Highcharts
-#####Discord
+VS code
+Bootstrap 
+HTML5
+JavaScript
+Bizagi
+Astah
+Storyboard That
+MS Oficce
+Magic Vector 
+Adobe Photoshop CC
+Git/GitHub
+StackOverflow
+ChartJs
+Highcharts
+Discord
 
 ## Autores
-#####Bianca Junia de Castro Gomes
-#####[Danilo Matias Martins](http://https://github.com/DaniloMatias "Danilo Matias Martins")
-#####Vinicius Henrique César
-#####[William Dourado Ferreira](http://https://github.com/WillDFz "William Dourado Ferreira")
+Bianca Junia de Castro Gomes
+[Danilo Matias Martins](http://https://github.com/DaniloMatias "Danilo Matias Martins")
+Vinicius Henrique César
+[William Dourado Ferreira](http://https://github.com/WillDFz "William Dourado Ferreira")
 
 ## Colaboradores
-#####Vinícius Rocha
+Vinícius Rocha
 
 ## Considerações finais
 A criação deste sistema foi uma ótima oportunidade para aprender novos conceitos de programação, conceitos de cálculos
