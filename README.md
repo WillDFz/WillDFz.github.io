@@ -66,7 +66,7 @@ Highcharts
 Discord
 
 ## Autores
-Bianca Junia de Castro Gomes
+[Bianca Junia de Castro Gomes](https://github.com/biancajcastrog "Bianca Junia de Castro Gomes")
 
 [Danilo Matias Martins](https://github.com/DaniloMatias "Danilo Matias Martins")
 
