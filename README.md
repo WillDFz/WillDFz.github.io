@@ -7,13 +7,11 @@ que engloba estatística descritiva, probabilidade, correlação e regressão.
 
 ## Projeto de Estatistica 
 
-Este e um repositorio para a prototipacao do Blue Statistics: Software de Estatistica desenvolvido para avaliacao no 3 ciclo do curso de Anaise e Desenvolvimento de Sistemas - Fatec Franca - 2019.
+Este é um repositório para a prototipação do Blue Statistics: Software de Estatística desenvolvido para avaliação no 3 ciclo do curso de Análise e Desenvolvimento de Sistemas - Fatec Franca - 2019.
 
 ## MVP
 
-O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operacoes basicas de estatistica. 
-
-
+O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operações básicas de estatística. 
 
 # Pré Requisitos
 Para execução do sistema, é necessária conexão com a internet e instalação de um dos seguintes navegadores:
