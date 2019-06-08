@@ -3,25 +3,22 @@
 [Blue Statistics](https://willdfz.github.io "Blue Statistics") é um software voltado para a realização de cálculos relacionados à estatística aplicada,
 que engloba estatística descritiva, probabilidade, correlação e regressão. 
 
-[![Desktop](http://willdfz.github.io/media/Landing_page_desktop.png "Desktop")](http://willdfz.github.io/media/Landing_page_desktop.png "Desktop")
-[![Mobile](http://willdfz.github.io/media/Landing_page_mobile.png "Mobile")](http://http://willdfz.github.io/media/Landing_page_mobile.png "Mobile")
+[![Desktop](http://willdfz.github.io/media/Landing_page.png "Desktop")](http://willdfz.github.io/media/Landing_page.png "Desktop")
 
 ## Projeto de Estatistica 
 
-Este e um repositorio para a prototipacao do Blue Statistics: Software de Estatistica desenvolvido para avaliacao no 3 ciclo do curso de Anaise e Desenvolvimento de Sistemas - Fatec Franca - 2019.
+Este é um repositório para a prototipação do Blue Statistics: Software de Estatística desenvolvido para avaliação no 3 ciclo do curso de Análise e Desenvolvimento de Sistemas - Fatec Franca - 2019.
 
 ## MVP
 
-O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operacoes basicas de estatistica. 
+O MVP é uma versão inicial muito limitada do Blue Statistcs. O objetivo é criar o mínimo necessário para realizar operações básicas de estatística. 
 
-
-
-# Pré Requisitos
+## Pré Requisitos
 Para execução do sistema, é necessária conexão com a internet e instalação de um dos seguintes navegadores:
 Google Chrome (versão 58 ou superior), Mozilla Firefox (versão 54 ou superior) ou Microsoft Edge (versão 14 ou superior). 
 O sistema não precisa ser instalado para ser executado.
 
-# Como utilizar o sistema
+## Como utilizar o sistema
 Na tela inicial, o usuário pode optar entre entrar no sistema (login ou como convidado) e cadastrar-se.
 Após entrar no sistema, o usuário pode escolher entre as três opções de operações do sistema:
 estatística descritiva, probabilidade ou correlação e regressão. (estatística descritiva e correlação e regressão aceitam
@@ -35,21 +32,24 @@ A correlação e regressão pede obrigatoriamente a inserção de dois vetores d
 serão: Gráfico, coeficiente de variação e coeficiente da reta. Após a exibição dos dados, o usuário pode optar por fazer
 uma projeção utilizando o coeficiente da reta.
 
-# Ferramentas utilizadas
-VS code
+## Ferramentas utilizadas
+Microsoft Visual Studio Code
 
 Bootstrap 
 
 HTML5
 
-JavaScript
+CSS3
+
+JavaScript (ECMAScript 6)
+
 Bizagi
 
 Astah
 
 Storyboard That
 
-MS Oficce
+Microsoft Oficce
 
 Magic Vector 
 
@@ -66,7 +66,7 @@ Highcharts
 Discord
 
 ## Autores
-Bianca Junia de Castro Gomes
+[Bianca Junia de Castro Gomes](https://github.com/biancajcastrog "Bianca Junia de Castro Gomes")
 
 [Danilo Matias Martins](https://github.com/DaniloMatias "Danilo Matias Martins")
 
