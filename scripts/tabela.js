@@ -1176,7 +1176,6 @@ function gerarGraficoDiscritiva() {
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-
                             fontColor: '#000',
                         }
                     }]
@@ -1238,7 +1237,6 @@ function gerarGraficoContinua() {
             vetorPercent[i] = fiPercent(vetorAux[i], vet);
         }
         let dados = vetorPercent;
-
         var myBarChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -1246,7 +1244,6 @@ function gerarGraficoContinua() {
                 datasets: [{
                     label: 'Frequencia %',
                     data: dados,
-
                     backgroundColor: ['rgba(72, 61, 139, 1)',
 
                         'rgba(0, 0, 255, 1)',
@@ -1311,6 +1308,9 @@ function gerarGraficoQualitativa() {
         let canvas1 = document.createElement('canvas');
         container.appendChild(canvas1)
         canvas1.id = 'graficoQualitativa';
+        canvas1.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        canvas1.style.border = '3px solid rgb(54, 104, 221) ';
+        canvas1.style.boxShadow = '0 0 50px -5px rgb(9, 25, 255)';
 
         var ctx = canvas1.getContext('2d');
        
@@ -1325,11 +1325,11 @@ function gerarGraficoQualitativa() {
         let repeticoes = vetorTratado[1];
         // Vetor de Porcentagem
         let vetorPercent = [];
-
+        let vetorString = [];
 
         for (let i = 0; i < repeticoes.length; i++) {
             vetorPercent[i] = fiPercent(repeticoes[i], vet);
-
+            vetorString[i] = vetorPercent[i];
 
         }
         var myBarChart = new Chart(ctx, {
@@ -1366,10 +1366,25 @@ function gerarGraficoQualitativa() {
             options: {
                 legend: {
                     labels: {
-                        fontColor: '#fff'
+                        fontColor: '#000'
                     }
                 },
-                
+                scales: {
+
+                    xAxes: [{
+                        
+                        ticks: {
+                            fontColor: '#fff'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                          
+
+                            fontColor: '#fff',
+                        }
+                    }]
+                }
             }
         });
     } else {
