@@ -1379,9 +1379,7 @@ function gerarGraficoQualitativa() {
                     }],
                     yAxes: [{
                         ticks: {
-                          
-
-                            fontColor: '#fff',
+                          fontColor: '#fff',
                         }
                     }]
                 }
