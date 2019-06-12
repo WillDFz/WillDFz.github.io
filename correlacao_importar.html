@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -11,6 +12,7 @@
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="css/styleS.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
@@ -51,19 +53,30 @@
                   src="media/return.png" /></a>
             </div>
             <h5 class="card-title text-center">Correlação</h5>
-            <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method="" name="correlacao">
-                <div class="text-center ">
-                  <h6>Importação de arquivo(.csv)</h6>
+            <form id="correlacaoForm" action="javascript:correlacao();gerarGraficoCorrelacao();" method=""
+              name="correlacao">
+              <div class="text-center ">
+                <h6>Importação de arquivo(.csv)</h6>
+              </div>
+              <div class="form-group text-center">
+                <div class="">
+                  <input type="file" onchange="getCSVCorrelacao(this)" class="" id="myFile">
                 </div>
-                <div class="form-group text-center">
-                  <div class="">
-                    <input type="file" onchange="getCSVCorrelacao(this)" class="" id="myFile">
-                  </div>
-                </div>
-                <hr class="my-4">
-                <div class="text-center">
-                  <button class="btn btn-dark" type="submit">Importar</button>
-                </div>
+              </div>
+              <hr class="my-4">
+              <label id="alteraveisLabel">Projeções:</label>
+              <div class="form-group" id="alteraveis">
+
+
+                <input type="number" name="xAlteravel" class="form-control my-input" id="xAlteravel" placeholder="(X)"
+                  onchange="regressaoAlteravel(this.value, 'x')">
+                <input type="number" name="yAlteravel" class="form-control my-input" id="yAlteravel" placeholder="(Y)"
+                  onchange="regressaoAlteravel(this.value, 'y')">
+
+              </div>
+              <div class="text-center">
+                <button class="btn btn-dark" type="submit">Importar</button>
+              </div>
             </form>
           </div>
         </div>
@@ -71,10 +84,11 @@
     </div>
     <!-- /.row -->
     <!-- Dados Row -->
-    
+
 
   </div>
   </div>
+  <div id="quadroDeDados" class="row"></div>
   <div class="row" id="dadosCorrelacao">
 
 
