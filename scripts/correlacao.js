@@ -299,10 +299,10 @@ function gerarGraficoCorrelacao() {
     let x1 = Math.min.apply(Math, xGrafico);
     let c = [regressaoA(), regressaoB()];
     let a = []
-    a = c[0] + c[1] + c[2] + c[3]; //encontrando o valor de A
+    a = regressaoA(); //encontrando o valor de A
     a = parseFloat(a);
     let b = []
-    b = c[11] + c[12] + c[13] + c[14]; //encontrando o valor de B
+    b = regressaoB(); //encontrando o valor de B
     b = parseFloat(b);
     let y1 = ((a * x1) + b);
     // Insere X1 e Y1 ao vetor de menores pontos
