@@ -1,5 +1,4 @@
 'use strict';
-
 // Formulario
 let formCorrelacao = document.getElementById("correlacaoForm");
 // Botao Calcular
@@ -103,12 +102,9 @@ function getYCorrelacao() {
     for (let i = 0; i < vetorY.length; i++) {
         yVetorInt[i] = parseFloat(vetorY[i]);
     }
-    
+
     return yVetorInt;
 }
-
-
-
 
 function correlacao() {
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
@@ -151,7 +147,9 @@ function correlacao() {
         return rPorcent.toFixed(2) + "%: Correlação fraca";
     }
 }
-function regressao() {
+
+function regressaoA() { //função pra encontrar só o valor de A
+
     let vetX = getXCorrelacao(); //vetor das variáveis independentes
     let vetY = getYCorrelacao(); //vetor das variáveis dependentes
     let vetXQuadrado = []; //vetor que salva os valores do vetor X ao quadrado
@@ -180,45 +178,59 @@ function regressao() {
     a = aux1 / aux2;
     a = a.toFixed(2);
     a = parseFloat(a);
-    /////////////// encontrando o valor de B (pode fazer uma função pra isso)
+    return (a); //retornar esta equação de primeiro grau
+}
+
+function regressaoB() { //função só pra encontrar o valor de B
+    let vetX = getXCorrelacao(); //vetor das variáveis independentes
+    let vetY = getYCorrelacao(); //vetor das variáveis dependentes
+    let vetXQuadrado = []; //vetor que salva os valores do vetor X ao quadrado
+    let vetYQuadrado = []; //vetor que salva os valores do vetor y ao quadrado
+    let vetMultXY = []; //vetor que salva os valores da multiplicação entre X e Y
+    let somatoriaX = 0; //somatoria de todos os valores do vetor X
+    let somatoriaY = 0; //somatoria de todos os valores do vetor Y
+    let somatoriaXQuadrado = 0; //somatoria de todos os valores do vetor X ao quadrado
+    let somatoriaYQuadrado = 0; //somatoria de todos os valores do vetor y ao quadrado
+    let somatoriaMultXY = 0; //somatoria de todos os valores do vetor de multiplicaçao entre X e Y]
+    let amostra = vetX.length; //tamanho da amostra = nº de variáveis pesquisadas
+    let a, b = 0;
+    for (let i = 0; i < vetX.length; i++) {
+        vetXQuadrado[i] = vetX[i] * vetX[i];
+        vetYQuadrado[i] = vetY[i] * vetY[i];
+        vetMultXY[i] = vetX[i] * vetY[i];
+        somatoriaX += vetX[i];
+        somatoriaY += vetY[i];
+        somatoriaXQuadrado += vetXQuadrado[i];
+        somatoriaYQuadrado += vetYQuadrado[i];
+        somatoriaMultXY += vetMultXY[i];
+    }
+    a = regressaoA(); //chamando o valor de A (precisa de A pra encontrar B)
+    /////////////// encontrando o valor de B
     let mediaX = somatoriaX / amostra; //média dos valores de X
     let mediaY = somatoriaY / amostra; //média dos valores de Y
     b = mediaY - (a * mediaX);
     b = b.toFixed(2);
     b = parseFloat(b);
-    return (a + " . X + " + b + " = Y"); //retornar esta equação de primeiro grau
+    return (b); //retornar esta equação de primeiro grau
 }
+
 function regressaoAlteravel(valor, valorParametro) {
     let resultado = 0;
-    let regressaoValores = regressao(); //chamando o valor retornado da função regressão
-    let quebraString = (regressaoValores + "").split(""); //quebrando o string 
-    let a = []
-    a = quebraString[0] + quebraString[1] + quebraString[2] + quebraString[3]; //encontrando o valor de A
+    let a = regressaoA();
     a = parseFloat(a);
-    let b = []
-    b = quebraString[11] + quebraString[12] + quebraString[13] + quebraString[14]; //encontrando o valor de B
+    let b = regressaoB();
     b = parseFloat(b);
     if (valorParametro == "x") { //se o valor que o usuário deu é o valor de X:
-        // Y reset
-        let yAlteravel = document.getElementById("yAlteravel");
-        yAlteravel.value = "";
         resultado = (a * valor) + b;
         resultado = resultado.toFixed(2);
         resultado = parseFloat(resultado);
-        console.log("Se x vale " + valor + ", y é igual a: " + resultado);
-        gerarTabelaProjecao("Se x vale " + valor + ", y é igual a: " + resultado);
+        return gerarTabelaProjecao("Se x vale " + valor + ", y é igual a: " + resultado);
     } else if (valorParametro == "y") { ////se o valor que o usuário deu é o valor de Y:
-        // X reset
-        let xAlteravel = document.getElementById("xAlteravel");
-        xAlteravel.value = "";
         resultado = (valor - b) / a;
         resultado = resultado.toFixed(2);
         resultado = parseFloat(resultado);
-        console.log("Se y vale " + valor + ", x é igual a: " + resultado);
-        gerarTabelaProjecao("Se y vale " + valor + ", x é igual a: " + resultado);
+        return gerarTabelaProjecao("Se y vale " + valor + ", x é igual a: " + resultado);
     }
-    a = null;
-    b = null;
 }
 
 function juncaoXY() {
@@ -260,8 +272,8 @@ function gerarGraficoCorrelacao() {
         // Criando as células do cabeçalho'
         let cabec1 = document.createElement('th');
         let cabec2 = document.createElement('th');
-        cabec1.innerText = "Correlação de:";
-        cabec2.innerText = "Equação:";
+        cabec1.innerText = "Equação:";
+        cabec2.innerText = "Correlação de:";
         // Posicionando as células de cabeçalho
         cabecalho.appendChild(cabec1);
         cabecalho.appendChild(cabec2);
@@ -273,7 +285,7 @@ function gerarGraficoCorrelacao() {
         tableBody.appendChild(tabelaLinha);
         let celula1 = document.createElement('td');
         let celula2 = document.createElement('td');
-        celula1.innerText = regressao();
+        celula1.innerText = `${regressaoA()}.X + ${regressaoB()} = Y`;
         celula2.innerText = correlacao();
         tabelaLinha.appendChild(celula1);
         tabelaLinha.appendChild(celula2);
@@ -285,7 +297,7 @@ function gerarGraficoCorrelacao() {
     }
     // Define os menores valores nos vetores
     let x1 = Math.min.apply(Math, xGrafico);
-    let c = regressao();
+    let c = [regressaoA(), regressaoB()];
     let a = []
     a = c[0] + c[1] + c[2] + c[3]; //encontrando o valor de A
     a = parseFloat(a);
@@ -303,16 +315,17 @@ function gerarGraficoCorrelacao() {
     vetMaiores.push(x2);
     vetMaiores.push(y2);
     let vetXY = juncaoXY();
-    regressao();
+    regressaoA();
+    regressaoB();
     // Criando grafico
     Highcharts.chart('containerGrafico', {
         xAxis: {
             title: 'Independente(X)'
-            
+
         },
         yAxis: {
             title: 'Dependente(Y)'
-            
+
         },
         title: {
             text: 'Grafico de Dispersão'
@@ -324,14 +337,13 @@ function gerarGraficoCorrelacao() {
             regression: true,
             type: 'line',
             name: 'Linha de Regressão',
-            data: [vetMaiores, vetMenores
-            ],
+            data: [vetMaiores, vetMenores],
             marker: {
                 enabled: true
             },
             states: {
                 hover: {
-                    lineWidth: 0
+                    lineWidth: 1
                 }
             },
             enableMouseTracking: false
@@ -345,6 +357,7 @@ function gerarGraficoCorrelacao() {
         }]
     });
 }
+
 function gerarTabelaProjecao(resultado) {
     if (flagProjecao == false) {
         flagProjecao = true;
@@ -361,7 +374,7 @@ function gerarTabelaProjecao(resultado) {
         tabela.appendChild(cabecalho);
         // Criando as células do cabeçalho'
         let cabec1 = document.createElement('th');
-        cabec1.innerText = "Resultado da projecao:";
+        cabec1.innerText = "Resultado da projeção:";
         // Posicionando as células de cabeçalho
         cabecalho.appendChild(cabec1);
         let tableBody = document.createElement('tbody');
@@ -380,5 +393,3 @@ function gerarTabelaProjecao(resultado) {
     }
 }
 //// Eventos
-//xAlteravel.addEventListener("change", regressaoAlteravel(this.value, "x" );
-//yAlteravel.addEventListener("change", regressaoAlteravel(valor, "y");
