@@ -144,11 +144,11 @@ function correlacao() {
     r = parseFloat(r);
     let rPorcent = r * 100; //resultado em porcentagem 
     if (r >= 0.6 && r <= 1) { //3 condicionais pra avaliar o nível de correlação
-        return rPorcent + "%: Correlação significativa";
+        return rPorcent.toFixed(2) + "%: Correlação significativa";
     } else if (r >= 0.3 && r < 0.6) {
-        return rPorcent + "%: Correlação fraca";
+        return rPorcent.toFixed(2) + "%: Correlação fraca";
     } else if (r >= 0 && r < 0.3) {
-        return rPorcent + "%: Correlação fraca";
+        return rPorcent.toFixed(2) + "%: Correlação fraca";
     }
 }
 function regressao() {
@@ -307,12 +307,12 @@ function gerarGraficoCorrelacao() {
     // Criando grafico
     Highcharts.chart('containerGrafico', {
         xAxis: {
-            title: 'Independente(X)',
-            min: 0,
+            title: 'Independente(X)'
+            
         },
         yAxis: {
-            title: 'Dependente(Y)',
-            min: 0
+            title: 'Dependente(Y)'
+            
         },
         title: {
             text: 'Grafico de Dispersão'
