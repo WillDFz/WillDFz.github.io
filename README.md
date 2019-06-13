@@ -75,7 +75,8 @@ Vinicius Henrique César
 [William Dourado Ferreira](https://github.com/WillDFz "William Dourado Ferreira")
 
 ## Colaboradores
-Vinícius Rocha
+[Vinícius Rocha](https://github.com/vorocha "Vinícius Rocha")
+
 
 ## Considerações finais
 A criação deste sistema foi uma ótima oportunidade para aprender novos conceitos de programação, conceitos de cálculos
