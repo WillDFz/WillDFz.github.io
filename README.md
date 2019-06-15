@@ -77,7 +77,14 @@ Vinicius Henrique César
 [William Dourado Ferreira](https://github.com/WillDFz "William Dourado Ferreira")
 
 ## Colaboradores
-[Vinícius Rocha](https://github.com/vorocha "Vinícius Rocha")
+Vinícius Rocha
+
+## Considerações finais
+A criação deste sistema foi uma ótima oportunidade para aprender novos conceitos de programação, conceitos de cálculos
+estatísticos e a buscar qualquer tipo de informação que agregaria novas características relevantes no sistema, como 
+ferramentas e fóruns. Agradecemos o auxilio do aluno Vinícius Rocha, que apesar de não estar cursando a disciplina de 
+estatística no momento, teve papel importante na implementação de características do software e feedback. Agradecemos também 
+todos os professores envolvidos no projeto, pelo suporte durante toda a realização do projeto. 
 
 
 
