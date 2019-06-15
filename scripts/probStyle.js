@@ -77,10 +77,7 @@ function selecionaCondicao() {
     condicoesListBi.style.display = "none"
     condicoesNormal.style.display = "none";
     // Inputs
-
-
     binomialForm1.style.display = "none";
-
     binomialForm2.style.display = "none";
     normalForm.style.display = "none";
     calcularBinomial.style.display = "none";
@@ -129,6 +126,7 @@ function selecionaCondicao() {
             quantidade.style.display = "none";
             entreForm.style.display = "none";
             minMaxForm.style.display = "inline-block";
+            tamanhoN.style.display = "none";
 
             break;
         default:
