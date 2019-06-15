@@ -210,8 +210,9 @@
  #alteraveis {
  	display: none;
  }
- #alteraveisLabel{
-	display: none;
+
+ #alteraveisLabel {
+ 	display: none;
  }
 
  #xAlteravel {
@@ -388,6 +389,17 @@
 
  .form-check {
  	padding-left: 0.25rem;
+ }
+
+ @media(min-width: 425px) {
+ 	.operaçõesItens {
+ 		flex-basis: 0;
+ 		-ms-flex-preferred-size: 0;
+
+ 		-ms-flex-positive: 1;
+ 		flex-grow: 1;
+ 		max-width: 100%;
+ 	}
  }
 
  @media(min-width:550px) {
