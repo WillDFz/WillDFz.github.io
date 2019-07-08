@@ -31,17 +31,21 @@ diferentes. Os resultados retornados sempre serão em porcentagem.
 A correlação e regressão pede obrigatoriamente a inserção de dois vetores de valores numéricos. Os resultados retornados
 serão: Gráfico, coeficiente de variação e coeficiente da reta. Após a exibição dos dados, o usuário pode optar por fazer
 uma projeção utilizando o coeficiente da reta.
+## Tecnologias utilizadas
 
-## Ferramentas utilizadas
-Microsoft Visual Studio Code
-
-Bootstrap 
-
-HTML5
-
-CSS3
+HTML5/CSS3
 
 JavaScript (ECMAScript 6)
+
+Bootstrap 4
+
+Highcharts
+
+ChartJs
+
+## Ferramentas utilizadas
+
+Microsoft Visual Studio Code
 
 Bizagi
 
@@ -60,10 +64,6 @@ Git/GitHub
 StackOverflow
 
 Visual Paradigm Online
-
-ChartJs
-
-Highcharts
 
 Discord
 
