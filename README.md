@@ -3,7 +3,7 @@
 [Blue Statistics](https://github.com/WillDFz/Blue-Statistics "Blue Statistics") é um software voltado para a realização de cálculos relacionados à estatística aplicada,
 que engloba estatística descritiva, probabilidade, correlação e regressão. 
 
-[![Desktop](https://github.com/WillDFz/Blue-Statistics/media/Landing_page.png "Desktop")](https://github.com/WillDFz/Blue-Statistics/media/Landing_page.png "Desktop")
+[![](media/Landing_page.png)
 
 ## Projeto de Estatistica 
 
